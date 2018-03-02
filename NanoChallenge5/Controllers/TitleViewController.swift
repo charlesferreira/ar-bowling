@@ -16,7 +16,5 @@ class TitleViewController: BaseViewController {
         charlesLabel.transform = charlesLabel.transform.rotated(by: -7 * .pi / 180)
     }
     
-    @IBAction func startTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    @IBAction func backToTitle(unwindSegue: UIStoryboardSegue) {}
 }

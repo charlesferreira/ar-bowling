@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  PinsPositioningViewController.swift
 //  NanoChallenge5
 //
 //  Created by Charles Ferreira on 02/03/2018.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class GameViewController: BaseViewController {
+class PinsPositioningViewController: BaseViewController {
 
 }
