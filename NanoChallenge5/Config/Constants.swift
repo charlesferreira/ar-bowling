@@ -12,6 +12,7 @@ struct Constants {
     
     static let player = Player()
     static let game = Game()
+    static let userDefaults = UserDefaults()
     
     private init() {}
 }
@@ -24,6 +25,10 @@ extension Constants {
     
     struct Game {
         let maxPlayers = 4
+    }
+    
+    struct UserDefaults {
+        let keyForHighscores = "highscores"
     }
     
 }

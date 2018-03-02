@@ -13,16 +13,11 @@ class PlayerSelectionViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     
-    var players = [Player()] {
-        didSet {
-            updateAddButton()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tableView.addGestureRecognizer(tap)
+        updateAddButton()
+        setupTapGesture()
+        tableView.isEditing = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -31,12 +26,18 @@ class PlayerSelectionViewController: BaseViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        players.append(Player())
+        CurrentPlayers.shared.addPlayer(Player())
+        updateAddButton()
         tableView.reloadData()
     }
     
+    private func setupTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tableView.addGestureRecognizer(tap)
+    }
+    
     private func updateAddButton() {
-        addButton.isHidden = players.count >= Constants.game.maxPlayers
+        addButton.isHidden = CurrentPlayers.count >= Constants.game.maxPlayers
     }
     
     @objc private func dismissKeyboard() {
@@ -47,7 +48,7 @@ class PlayerSelectionViewController: BaseViewController {
 extension PlayerSelectionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        return CurrentPlayers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,7 +57,7 @@ extension PlayerSelectionViewController: UITableViewDataSource {
         }
 
         cell.delegate = self
-        cell.player = players[indexPath.row]
+        cell.player = CurrentPlayers.shared.players[indexPath.row]
         
         return cell
     }
@@ -67,13 +68,21 @@ extension PlayerSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }
 
 
 extension PlayerSelectionViewController: PlayerTableViewCellDelegate {
     
     func cell(_ cell: PlayerTableViewCell, didRemovePlayer player: Player) {
-        players = players.filter { $0 !== player }
+        CurrentPlayers.shared.removePlayer(player)
         tableView.reloadData()
     }
 }

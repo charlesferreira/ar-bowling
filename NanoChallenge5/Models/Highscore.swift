@@ -1,14 +1,13 @@
 //
-//  Player.swift
+//  Highscore.swift
 //  NanoChallenge5
 //
 //  Created by Charles Ferreira on 02/03/2018.
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
-class Player {
+struct Highscore {
     
-    var name: String = ""
-    var score: Int = 0
-    
+    var player: String
+    var score: Int
 }

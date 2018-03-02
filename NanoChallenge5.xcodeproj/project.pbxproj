@@ -16,6 +16,9 @@
 		569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D32049A27400867939 /* PlayerTableViewCell.swift */; };
 		569032D92049C24600867939 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D82049C24600867939 /* Constants.swift */; };
 		569032DC2049C52F00867939 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032DB2049C52F00867939 /* Player.swift */; };
+		56B761CF2049E1DB0003A02B /* HighscoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B761CE2049E1DB0003A02B /* HighscoreTableViewCell.swift */; };
+		56B761D12049E2400003A02B /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B761D02049E2400003A02B /* Highscore.swift */; };
+		56B761D32049E9850003A02B /* CurrentPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B761D22049E9850003A02B /* CurrentPlayers.swift */; };
 		56BF1D792047822E006A46E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1D782047822E006A46E0 /* AppDelegate.swift */; };
 		56BF1D7B2047822E006A46E0 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BF1D7A2047822E006A46E0 /* art.scnassets */; };
 		56BF1D7D2047822E006A46E0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1D7C2047822E006A46E0 /* ARViewController.swift */; };
@@ -46,6 +49,9 @@
 		569032D32049A27400867939 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		569032D82049C24600867939 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		569032DB2049C52F00867939 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		56B761CE2049E1DB0003A02B /* HighscoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTableViewCell.swift; sourceTree = "<group>"; };
+		56B761D02049E2400003A02B /* Highscore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
+		56B761D22049E9850003A02B /* CurrentPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayers.swift; sourceTree = "<group>"; };
 		56BF1D752047822E006A46E0 /* NanoChallenge5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56BF1D782047822E006A46E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56BF1D7A2047822E006A46E0 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				569032D32049A27400867939 /* PlayerTableViewCell.swift */,
+				56B761CE2049E1DB0003A02B /* HighscoreTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -99,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				569032DB2049C52F00867939 /* Player.swift */,
+				56B761D02049E2400003A02B /* Highscore.swift */,
+				56B761D22049E9850003A02B /* CurrentPlayers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B761CF2049E1DB0003A02B /* HighscoreTableViewCell.swift in Sources */,
 				56BF1D99204879D0006A46E0 /* TitleViewController.swift in Sources */,
 				569032CF20498C9A00867939 /* ThrowResultsViewController.swift in Sources */,
 				569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */,
@@ -305,10 +315,12 @@
 				569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */,
 				569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */,
 				56BF1D8E20478453006A46E0 /* Game.swift in Sources */,
+				56B761D12049E2400003A02B /* Highscore.swift in Sources */,
 				56BF1D952047884D006A46E0 /* matrix_float4x4.swift in Sources */,
 				56BF1D9D2048AAE1006A46E0 /* BaseViewController.swift in Sources */,
 				56BF1DAE2048D253006A46E0 /* GameState.swift in Sources */,
 				569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */,
+				56B761D32049E9850003A02B /* CurrentPlayers.swift in Sources */,
 				569032D92049C24600867939 /* Constants.swift in Sources */,
 				569032CD20498C1600867939 /* GameViewController.swift in Sources */,
 				56BF1D792047822E006A46E0 /* AppDelegate.swift in Sources */,
