@@ -41,7 +41,7 @@
         <scene sceneID="arb-s7-RIq">
             <objects>
                 <viewController storyboardIdentifier="TitleViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mDo-wb-GQU" customClass="TitleViewController" customModule="NanoChallenge5" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" hidden="YES" contentMode="scaleToFill" id="3ZF-B2-BOo">
+                    <view key="view" contentMode="scaleToFill" id="3ZF-B2-BOo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -50,19 +50,19 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QP-9Z-dUj">
-                                <rect key="frame" x="129" y="122.5" width="117" height="99"/>
-                                <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="72"/>
+                                <rect key="frame" x="116.5" y="112" width="143" height="120.5"/>
+                                <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="88"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STRIKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSh-Gc-7nt">
-                                <rect key="frame" x="117" y="201.5" width="141.5" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOWLING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSh-Gc-7nt">
+                                <rect key="frame" x="95" y="212.5" width="187" height="46"/>
                                 <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="33"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGV-PB-blC" userLabel="Charles Anchor">
-                                <rect key="frame" x="129" y="122.5" width="1" height="1"/>
+                                <rect key="frame" x="116.5" y="112" width="1" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ZIp-2P-aVV"/>
@@ -70,7 +70,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charles'" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze3-Dm-Xgp">
-                                <rect key="frame" x="86" y="103.5" width="88.5" height="40"/>
+                                <rect key="frame" x="73.5" y="93" width="88.5" height="40"/>
                                 <fontDescription key="fontDescription" name="Allura-Regular" family="Allura" pointSize="32"/>
                                 <color key="textColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

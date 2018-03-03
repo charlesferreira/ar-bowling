@@ -11,7 +11,6 @@ import UIKit
 class PinsPositioningViewController: BaseViewController {
 
     override func viewDidLoad() {
-        
+        Game.shared.state = PinsPositioningGameState()
     }
-    
 }

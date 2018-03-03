@@ -21,6 +21,11 @@ class PlayerSelectionViewController: BaseViewController {
         tableView.isEditing = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Game.shared.state = PlayerSelectionGameState()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         dismissKeyboard()

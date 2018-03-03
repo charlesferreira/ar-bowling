@@ -13,5 +13,4 @@ extension matrix_float4x4 {
     var position: SCNVector3 {
         return SCNVector3(columns.3.x, columns.3.y, columns.3.z)
     }
-    
 }

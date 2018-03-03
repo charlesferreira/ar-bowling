@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5626D713204A260400C29A1E /* PinsPositioningGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626D712204A260400C29A1E /* PinsPositioningGameState.swift */; };
+		5626D715204A2C4600C29A1E /* PlayerSelectionGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */; };
 		569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C620498B7900867939 /* PlayerSelectionViewController.swift */; };
 		569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C820498BB400867939 /* PinsPositioningViewController.swift */; };
 		569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CA20498BD500867939 /* HighscoresViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5626D712204A260400C29A1E /* PinsPositioningGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningGameState.swift; sourceTree = "<group>"; };
+		5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionGameState.swift; sourceTree = "<group>"; };
 		569032C620498B7900867939 /* PlayerSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionViewController.swift; sourceTree = "<group>"; };
 		569032C820498BB400867939 /* PinsPositioningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningViewController.swift; sourceTree = "<group>"; };
 		569032CA20498BD500867939 /* HighscoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				56BF1DAF2048D272006A46E0 /* NewGameState.swift */,
+				5626D712204A260400C29A1E /* PinsPositioningGameState.swift */,
+				5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */,
 			);
 			path = GameStates;
 			sourceTree = "<group>";
@@ -308,8 +314,10 @@
 				569032D120498CAA00867939 /* GameResultsViewController.swift in Sources */,
 				569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */,
 				569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */,
+				5626D713204A260400C29A1E /* PinsPositioningGameState.swift in Sources */,
 				56BF1D952047884D006A46E0 /* matrix_float4x4.swift in Sources */,
 				56BF1D9D2048AAE1006A46E0 /* BaseViewController.swift in Sources */,
+				5626D715204A2C4600C29A1E /* PlayerSelectionGameState.swift in Sources */,
 				56BF1DAE2048D253006A46E0 /* GameState.swift in Sources */,
 				569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */,
 				56B761D32049E9850003A02B /* CurrentPlayers.swift in Sources */,
