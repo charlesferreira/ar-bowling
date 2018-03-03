@@ -37,10 +37,6 @@ class PlayerSelectionViewController: BaseViewController {
         tableView.reloadData()
     }
     
-    @IBAction func startButtonTapped(_ sender: Any) {
-        //startButton.isEnabled = !startButton.isEnabled
-    }
-    
     private func setupTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tableView.addGestureRecognizer(tap)

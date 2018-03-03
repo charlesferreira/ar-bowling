@@ -61,7 +61,7 @@ class Game {
     
     func createFloorNode() {
         // node
-        let floor = SCNBox(width: 10, height: 1, length: 10, chamferRadius: 0.5)
+        let floor = SCNBox(width: 1000, height: 10, length: 1000, chamferRadius: 0.5)
         let floorNode = SCNNode(geometry: floor)
         floorNode.position = pins.position
         floorNode.position.y -= Float(floor.height / 2)
@@ -88,5 +88,12 @@ class Game {
         physicsBody.damping = 0.2
         
         return physicsBody
+    }
+    
+    func throwBall() {
+        let ball = SCNScene(named: "art.scnassets/ball.scn")!.rootNode
+        let transform = matrix_float4x4(sceneView.pointOfView!.worldTransform)
+        ball.position = transform.position
+        scene.rootNode.addChildNode(ball)
     }
 }

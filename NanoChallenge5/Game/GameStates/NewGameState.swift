@@ -11,7 +11,6 @@ import ARKit
 struct NewGameState: GameState {
     
     func setup(game: Game) {
-//        game.sceneView.showsStatistics = false
         game.sceneView.autoenablesDefaultLighting = true
         game.scene = SCNScene()
         game.pins = loadPins(into: game.scene.rootNode)
@@ -23,7 +22,7 @@ struct NewGameState: GameState {
     
     private func loadPins(into node: SCNNode) -> SCNNode {
         let pins = SCNScene(named: "art.scnassets/pins.scn")!.rootNode
-        pins.position = SCNVector3Make(0, -0.5, -5)
+        pins.position = SCNVector3Make(0, -1, -5)
         node.addChildNode(pins)
         return pins
     }

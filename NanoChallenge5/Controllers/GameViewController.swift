@@ -10,4 +10,9 @@ import UIKit
 
 class GameViewController: BaseViewController {
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        Game.shared.throwBall()
+    }
+    
 }
