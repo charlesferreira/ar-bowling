@@ -10,23 +10,20 @@ import ARKit
 
 struct PinsPositioningGameState: GameState {
     
-    func setup(game: Game) {
-        print(">>> State: PinsPositioningGameState")
-    }
+    func setup(game: Game) {}
     
     func teardown(game: Game) {
-        print("<<< State: PinsPositioningGameState")
+        game.createFloorNode()
+        game.enablePhysics()
     }
     
     func update(game: Game) {
-        guard let sceneView = game.sceneView else { return }
+        guard let view = game.sceneView else { return }
         
-        DispatchQueue.main.async {
-            let hits = sceneView.hitTest(sceneView.center, types: [.existingPlane])
-            if let position = hits.first?.worldTransform.position {
-                game.ball?.isHidden = false
-                game.ball?.position = position
-            }
+        let hits = view.hitTest(game.viewCenter, types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane])
+        if let position = hits.last?.worldTransform.position {
+            game.pins!.isHidden = false
+            game.pins!.position = position
         }
     }
 }

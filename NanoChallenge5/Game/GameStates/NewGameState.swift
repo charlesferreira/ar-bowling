@@ -11,26 +11,20 @@ import ARKit
 struct NewGameState: GameState {
     
     func setup(game: Game) {
-        print(">>> State: NewGameState")
-        game.sceneView.showsStatistics = false
-//        game.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+//        game.sceneView.showsStatistics = false
         game.sceneView.autoenablesDefaultLighting = true
-        game.sceneView.scene = SCNScene()
-        
-        loadModels(game: game)
+        game.scene = SCNScene()
+        game.pins = loadPins(into: game.scene.rootNode)
     }
     
-    func teardown(game: Game) {
-        print("<<< State: NewGameState")
-    }
+    func teardown(game: Game) {}
     
-    func update(game: Game) {
-    }
+    func update(game: Game) {}
     
-    func loadModels(game: Game) {
-        let pinsScene = SCNScene(named: "art.scnassets/ball.dae")!
-        game.ball = pinsScene.rootNode
-        game.ball!.isHidden = true
-        game.sceneView.scene.rootNode.addChildNode(game.ball!)
+    private func loadPins(into node: SCNNode) -> SCNNode {
+        let pins = SCNScene(named: "art.scnassets/pins.scn")!.rootNode
+        pins.position = SCNVector3Make(0, -0.5, -5)
+        node.addChildNode(pins)
+        return pins
     }
 }
