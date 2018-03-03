@@ -12,10 +12,11 @@ class PlayerSelectionViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateAddButton()
+        updateButtons()
         setupTapGesture()
         tableView.isEditing = true
     }
@@ -27,8 +28,12 @@ class PlayerSelectionViewController: BaseViewController {
     
     @IBAction func addButtonTapped(_ sender: Any) {
         CurrentPlayers.shared.addPlayer(Player())
-        updateAddButton()
+        updateButtons()
         tableView.reloadData()
+    }
+    
+    @IBAction func startButtonTapped(_ sender: Any) {
+        //startButton.isEnabled = !startButton.isEnabled
     }
     
     private func setupTapGesture() {
@@ -36,13 +41,16 @@ class PlayerSelectionViewController: BaseViewController {
         tableView.addGestureRecognizer(tap)
     }
     
-    private func updateAddButton() {
+    private func updateButtons() {
         addButton.isHidden = CurrentPlayers.count >= Constants.game.maxPlayers
+        startButton.isEnabled = CurrentPlayers.count >= Constants.game.minPlayers
     }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    @IBAction func backToPlayerSelection(unwindSegue: UIStoryboardSegue) {}
 }
 
 extension PlayerSelectionViewController: UITableViewDataSource {
@@ -66,13 +74,13 @@ extension PlayerSelectionViewController: UITableViewDataSource {
 extension PlayerSelectionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
+        CurrentPlayers.shared.movePlayer(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .none
     }
-    
+
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -83,6 +91,7 @@ extension PlayerSelectionViewController: PlayerTableViewCellDelegate {
     
     func cell(_ cell: PlayerTableViewCell, didRemovePlayer player: Player) {
         CurrentPlayers.shared.removePlayer(player)
+        updateButtons()
         tableView.reloadData()
     }
 }

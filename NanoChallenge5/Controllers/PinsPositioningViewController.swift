@@ -10,4 +10,8 @@ import UIKit
 
 class PinsPositioningViewController: BaseViewController {
 
+    override func viewDidLoad() {
+        
+    }
+    
 }

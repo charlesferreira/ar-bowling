@@ -26,6 +26,11 @@ class CurrentPlayers {
         players = players.filter { $0 !== player }
     }
     
+    func movePlayer(fromIndex oldIndex: Int, toIndex newIndex: Int) {
+        let player = players.remove(at: oldIndex)
+        players.insert(player, at: newIndex)
+    }
+    
     func resetScore() {
         for player in players {
             player.score = 0

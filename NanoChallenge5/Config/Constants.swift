@@ -24,6 +24,7 @@ extension Constants {
     }
     
     struct Game {
+        let minPlayers = 1
         let maxPlayers = 4
     }
     

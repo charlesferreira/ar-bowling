@@ -8,9 +8,9 @@
 
 protocol GameState {
     
-    func setup()
+    func setup(game: Game)
     
-    func teardown()
+    func teardown(game: Game)
     
-    func update(_ game: Game)
+    func update(game: Game)
 }

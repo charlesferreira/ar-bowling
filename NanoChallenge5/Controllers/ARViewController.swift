@@ -15,20 +15,28 @@ class ARViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ARManager.configure(sceneView: sceneView)
+        sceneView.delegate = self
+        Game.shared.setup(sceneView: sceneView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ARManager.shared.resume()
+        Game.shared.resume()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        ARManager.shared.pause()
+        Game.shared.pause()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         performSegue(withIdentifier: "ShowTitle", sender: self)
+    }
+}
+
+extension ARViewController: ARSCNViewDelegate {
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        Game.shared.update()
     }
 }
