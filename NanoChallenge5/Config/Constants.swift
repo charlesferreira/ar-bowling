@@ -10,42 +10,31 @@ import Foundation
 
 struct Constants {
     
-    static let player = Player()
-    static let game = Game()
-    static let userDefaults = UserDefaults()
-    static let models = Models()
-    static let fx = FX()
-    
-    private init() {}
-}
-
-extension Constants {
-    
     struct Player {
-        let nameMaxLength = 15
+        static let nameMaxLength = 15
     }
     
     struct Game {
-        let minPlayers = 1
-        let maxPlayers = 4
-        let ballLifeTime = 5.0
-        // distância entre a câmera e o ponto de surgimento das bolas
-        let spawnDepth = 1.0
-        // multiplicador de velocidade da câmera pra um arremesso mais legal
-        let throwingIntensity = 1.5
+        static let minPlayers: Int = 1
+        static let maxPlayers: Int = 4
+        static let ballLifeTime: Double = 5
+        static let spawnDepth: Double = 1
+        static let throwingIntensity: Double = 2.5
     }
     
     struct UserDefaults {
-        let keyForHighscores = "highscores"
+        static let keyForHighscores = "highscores"
     }
     
     struct Models {
-        let ball = "art.scnassets/ball.scn"
-        let pins = "art.scnassets/pins.scn"
+        static let ball = "art.scnassets/ball.scn"
+        static let pins = "art.scnassets/pins.scn"
     }
     
     struct FX {
-        let placeholderFadeDuration = 0.1
-        let ballFadeOutDuration = 1.0
+        static let placeholderFadeDuration = 0.1
+        static let ballFadeOutDuration = 1.0
     }
+    
+    private init() {}
 }

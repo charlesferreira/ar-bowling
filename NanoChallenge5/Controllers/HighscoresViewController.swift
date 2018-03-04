@@ -22,7 +22,7 @@ class HighscoresViewController: BaseViewController {
     }
     
     private func loadHighscores() {
-        highscores = defaults.array(forKey: Constants.userDefaults.keyForHighscores) as! [[String : Int]]
+        highscores = defaults.array(forKey: Constants.UserDefaults.keyForHighscores) as! [[String : Int]]
     }
 }
 

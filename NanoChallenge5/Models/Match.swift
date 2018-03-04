@@ -1,20 +1,16 @@
 //
-//  CurrentPlayers.swift
+//  Match.swift
 //  NanoChallenge5
 //
 //  Created by Charles Ferreira on 02/03/2018.
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
-class CurrentPlayers {
+class Match {
     
-    static let shared = CurrentPlayers()
+    static let instance = Match()
     
     private (set) var players = [Player()]
-    
-    static var count: Int {
-        return shared.players.count
-    }
     
     private init() {}
     

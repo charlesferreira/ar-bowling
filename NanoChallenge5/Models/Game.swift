@@ -11,15 +11,15 @@ import ARKit
 
 @objc class Game: NSObject {
     
-    static let shared = Game()
+    static let instance = Game()
     private override init() {}
     
     weak var sceneView: ARSCNView!
     var viewCenter: CGPoint!
     
     // entities
+    var pinsPlaceholder: SCNNode!
     var ballPlaceholder: SCNNode!
-    var pins: SCNNode!
     
     var state: GameState? {
         willSet {
@@ -55,7 +55,7 @@ import ARKit
     var spawnPoint: SCNVector3 {
         let position = sceneView.pointOfView!.position
         let direction = sceneView.pointOfView!.direction
-        return position + direction * Constants.game.spawnDepth
+        return position + direction * Constants.Game.spawnDepth
     }
     
     func setup(sceneView: ARSCNView) {
@@ -79,34 +79,12 @@ import ARKit
     }
     
     func createFloorNode() {
-        // node
-        let floor = SCNBox(width: 1000, height: 10, length: 1000, chamferRadius: 0)
-        let floorNode = SCNNode(geometry: floor)
-        floorNode.position = pins.position
-        floorNode.position.y -= Float(floor.height / 2)
-        floorNode.opacity = 0
+        let floorNode = Floor(at: pinsPlaceholder.position)
         sceneView.scene.rootNode.addChildNode(floorNode)
-        
-        // physics
-//        let floorShape = SCNPhysicsShape(geometry: floor, options: nil)
-        floorNode.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
-        floorNode.physicsBody?.restitution = 0.4
-    }
-    
-    func enablePhysics() {
-        for pin in pins.childNodes {
-            pin.physicsBody = pinPhysicsBody()
-        }
-    }
-    
-    private func pinPhysicsBody() -> SCNPhysicsBody {
-        let cylinder = SCNCylinder(radius: 0.15, height: 1)
-        let cylinderShape = SCNPhysicsShape(geometry: cylinder, options: nil)
-        return SCNPhysicsBody(type: .dynamic, shape: cylinderShape)
     }
     
     func showBallPlaceholder() {
-        ballPlaceholder.runAction(SCNAction.fadeIn(duration: Constants.fx.placeholderFadeDuration))
+        ballPlaceholder.runAction(SCNAction.fadeIn(duration: Constants.FX.placeholderFadeDuration))
     }
     
     func hideBallPlaceholder() {
@@ -117,8 +95,8 @@ import ARKit
     func throwBall() {
         hideBallPlaceholder()
         
-        let velocity = cameraVelocity * Constants.game.throwingIntensity
-        let ball = Ball.create(at: spawnPoint, withVelocity: velocity)
+        let velocity = cameraVelocity * Constants.Game.throwingIntensity
+        let ball = Ball.create(position: spawnPoint, velocity: velocity)
         sceneView.scene.rootNode.addChildNode(ball)
     }
 }

@@ -10,13 +10,13 @@ import SceneKit
 
 class Ball: SCNNode {
     
-    private static let shared = Ball(model: SCNScene(named: Constants.models.ball)!.rootNode)
+    private static let shared = Ball(model: SCNScene(named: Constants.Models.ball)!.rootNode)
     
     static func create() -> Ball {
         return shared.clone()
     }
     
-    static func create(at position: SCNVector3, withVelocity velocity: SCNVector3) -> Ball {
+    static func create(position: SCNVector3, velocity: SCNVector3) -> Ball {
         let ball = create()
         ball.position = position
         ball.physicsBody!.velocity = velocity
@@ -46,11 +46,11 @@ class Ball: SCNNode {
     }
     
     private func delayAction() -> SCNAction {
-        return SCNAction.wait(duration: Constants.game.ballLifeTime)
+        return SCNAction.wait(duration: Constants.Game.ballLifeTime)
     }
     
     private func fadeOutAction() -> SCNAction {
-        return SCNAction.fadeOut(duration: Constants.fx.ballFadeOutDuration)
+        return SCNAction.fadeOut(duration: Constants.FX.ballFadeOutDuration)
     }
     
     private func removeAction() -> SCNAction {

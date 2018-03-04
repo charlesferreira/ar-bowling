@@ -11,7 +11,7 @@ import UIKit
 class GameStateController: BaseViewController, GameState {
     
     var game: Game {
-        return Game.shared
+        return Game.instance
     }
     
     override func viewWillAppear(_ animated: Bool) {

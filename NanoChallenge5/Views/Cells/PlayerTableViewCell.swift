@@ -41,7 +41,7 @@ extension PlayerTableViewCell: UITextFieldDelegate {
         let text = textField.text ?? ""
         guard let stringRange = Range(range, in: text) else { return false }
         let newText = text.replacingCharacters(in: stringRange, with: string)
-        return newText.count <= Constants.player.nameMaxLength
+        return newText.count <= Constants.Player.nameMaxLength
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -13,13 +13,13 @@ class PinsPositioningStateController: GameStateController {
     func setup() {
         game.sceneView.autoenablesDefaultLighting = true
         game.sceneView.scene = SCNScene()
-        game.pins = loadPins()
+        game.pinsPlaceholder = createPinsPlaceholder()
         game.ballPlaceholder = createBallPlaceholder()
     }
     
     func teardown() {
         game.createFloorNode()
-        game.enablePhysics()
+        game.pinsPlaceholder.isHidden = true
     }
     
     func update(at time: TimeInterval) {
@@ -27,14 +27,17 @@ class PinsPositioningStateController: GameStateController {
         
         let hits = view.hitTest(game.viewCenter, types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane])
         if let position = hits.last?.worldTransform.position {
-            game.pins!.position = position + SCNVector3(0, -0.3, 0)
+            game.pinsPlaceholder!.isHidden = false
+            game.pinsPlaceholder!.position = position + SCNVector3(0, -0.3, 0)
         }
     }
     
-    private func loadPins() -> SCNNode {
-        let pins = SCNScene(named: Constants.models.pins)!.rootNode
-        pins.position = game.sceneView.pointOfView!.direction + SCNVector3Make(0, -1, -5)
+    private func createPinsPlaceholder() -> SCNNode {
+        let pins = SCNScene(named: Constants.Models.pins)!.rootNode
         game.sceneView.scene.rootNode.addChildNode(pins)
+        pins.position = game.sceneView.pointOfView!.direction + SCNVector3Make(0, -1, -5)
+        pins.opacity = 0.5
+        pins.isHidden = true
         return pins
     }
     
