@@ -35,7 +35,6 @@ class PinsPositioningStateController: GameStateController {
     private func createPinsPlaceholder() -> SCNNode {
         let pins = SCNScene(named: Constants.Models.pins)!.rootNode
         game.sceneView.scene.rootNode.addChildNode(pins)
-        pins.position = game.sceneView.pointOfView!.direction + SCNVector3Make(0, -1, -5)
         pins.opacity = 0.5
         pins.isHidden = true
         return pins

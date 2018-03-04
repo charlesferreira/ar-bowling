@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56195585204BFFF900D004CA /* GameStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56195584204BFFF900D004CA /* GameStateController.swift */; };
 		564CD2DE204B861C006F2CD4 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD2DD204B861C006F2CD4 /* SCNNode.swift */; };
+		56774BF3204C30B40047D569 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56774BF2204C30B40047D569 /* Camera.swift */; };
 		568E3C25204C21F400E6C906 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E3C24204C21F400E6C906 /* Physics.swift */; };
 		568E3C27204C22A600E6C906 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E3C26204C22A600E6C906 /* Floor.swift */; };
 		568E3C29204C277700E6C906 /* PinSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E3C28204C277700E6C906 /* PinSet.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		56195584204BFFF900D004CA /* GameStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateController.swift; sourceTree = "<group>"; };
 		564CD2DD204B861C006F2CD4 /* SCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNode.swift; sourceTree = "<group>"; };
+		56774BF2204C30B40047D569 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		568E3C24204C21F400E6C906 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
 		568E3C26204C22A600E6C906 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		568E3C28204C277700E6C906 /* PinSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSet.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				56BF1DB2204978DB006A46E0 /* Game.swift */,
 				569032DB2049C52F00867939 /* Player.swift */,
 				56B761D22049E9850003A02B /* Match.swift */,
+				56774BF2204C30B40047D569 /* Camera.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				569032DC2049C52F00867939 /* Player.swift in Sources */,
 				56BF1D93204786F6006A46E0 /* SCNVector3.swift in Sources */,
 				56BF1D7D2047822E006A46E0 /* ARViewController.swift in Sources */,
+				56774BF3204C30B40047D569 /* Camera.swift in Sources */,
 				56BF1DB3204978DB006A46E0 /* Game.swift in Sources */,
 				569032D120498CAA00867939 /* GameResultsStateController.swift in Sources */,
 				569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */,

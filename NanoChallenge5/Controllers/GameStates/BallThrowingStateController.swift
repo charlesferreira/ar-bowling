@@ -12,20 +12,12 @@ class BallThrowingStateController: GameStateController {
     
     var canThrow = true
     
-    func setup() {
-        game.cameraPreviousPosition = nil
-        game.cameraCurrentPosition = game.camera?.transform.position
-    }
+    func setup() {}
     
-    func teardown() {
-    }
+    func teardown() {}
     
     func update(at time: TimeInterval) {
-        game.cameraPreviousPosition = game.cameraCurrentPosition
-        game.cameraCurrentPosition = game.camera?.transform.position
-        
-        game.previousTime = game.currentTime
-        game.currentTime = time
+        game.camera.update(at: time)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

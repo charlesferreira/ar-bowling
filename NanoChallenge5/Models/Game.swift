@@ -14,6 +14,7 @@ import ARKit
     static let instance = Game()
     private override init() {}
     
+    // view
     weak var sceneView: ARSCNView!
     var viewCenter: CGPoint!
     
@@ -28,30 +29,8 @@ import ARKit
         }
     }
     
-    // câmera
-    var cameraPreviousPosition: SCNVector3?
-    var cameraCurrentPosition: SCNVector3!
-    var camera: ARCamera? {
-        return sceneView.session.currentFrame?.camera
-    }
-    var cameraTranslation: SCNVector3 {
-        guard let previousPosition = cameraPreviousPosition else { return SCNVector3Zero }
-        return cameraCurrentPosition - previousPosition
-    }
-    var cameraVelocity: SCNVector3 {
-        guard deltaTime != nil else { return SCNVector3Zero }
-        return cameraTranslation / Float(deltaTime!)
-    }
+    var camera: Camera!
     
-    // delta time
-    var previousTime: TimeInterval?
-    var currentTime: TimeInterval!
-    var deltaTime: TimeInterval? {
-        guard previousTime != nil else { return nil }
-        return currentTime - previousTime!
-    }
-    
-    // spawn
     var spawnPoint: SCNVector3 {
         let position = sceneView.pointOfView!.position
         let direction = sceneView.pointOfView!.direction
@@ -61,7 +40,8 @@ import ARKit
     func setup(sceneView: ARSCNView) {
         sceneView.debugOptions = [.showPhysicsShapes]
         self.sceneView = sceneView
-        self.viewCenter = sceneView.center
+        viewCenter = sceneView.center
+        camera = Camera()
     }
     
     func resume() {
@@ -95,7 +75,7 @@ import ARKit
     func throwBall() {
         hideBallPlaceholder()
         
-        let velocity = cameraVelocity * Constants.Game.throwingIntensity
+        let velocity = camera.velocity * Constants.Game.throwingIntensity
         let ball = Ball.create(position: spawnPoint, velocity: velocity)
         sceneView.scene.rootNode.addChildNode(ball)
     }
