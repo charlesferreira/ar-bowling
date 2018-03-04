@@ -7,17 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5626D713204A260400C29A1E /* PinsPositioningGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626D712204A260400C29A1E /* PinsPositioningGameState.swift */; };
-		5626D715204A2C4600C29A1E /* PlayerSelectionGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */; };
-		564CD2DC204B7427006F2CD4 /* BallThrowingGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */; };
+		56195585204BFFF900D004CA /* GameStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56195584204BFFF900D004CA /* GameStateController.swift */; };
 		564CD2DE204B861C006F2CD4 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD2DD204B861C006F2CD4 /* SCNNode.swift */; };
-		564DFFC5204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DFFC4204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift */; };
 		569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C620498B7900867939 /* PlayerSelectionViewController.swift */; };
-		569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C820498BB400867939 /* PinsPositioningViewController.swift */; };
+		569032C920498BB400867939 /* PinsPositioningStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C820498BB400867939 /* PinsPositioningStateController.swift */; };
 		569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CA20498BD500867939 /* HighscoresViewController.swift */; };
-		569032CD20498C1600867939 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CC20498C1600867939 /* GameViewController.swift */; };
-		569032CF20498C9A00867939 /* ThrowResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CE20498C9A00867939 /* ThrowResultsViewController.swift */; };
-		569032D120498CAA00867939 /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D020498CAA00867939 /* GameResultsViewController.swift */; };
+		569032CD20498C1600867939 /* BallThrowingStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CC20498C1600867939 /* BallThrowingStateController.swift */; };
+		569032CF20498C9A00867939 /* ThrowResultsStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CE20498C9A00867939 /* ThrowResultsStateController.swift */; };
+		569032D120498CAA00867939 /* GameResultsStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D020498CAA00867939 /* GameResultsStateController.swift */; };
 		569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D32049A27400867939 /* PlayerTableViewCell.swift */; };
 		569032D92049C24600867939 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D82049C24600867939 /* Constants.swift */; };
 		569032DC2049C52F00867939 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032DB2049C52F00867939 /* Player.swift */; };
@@ -36,24 +33,19 @@
 		56BF1D99204879D0006A46E0 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1D98204879D0006A46E0 /* TitleViewController.swift */; };
 		56BF1D9B20487B41006A46E0 /* Allura-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BF1D9A20487B41006A46E0 /* Allura-Regular.ttf */; };
 		56BF1D9D2048AAE1006A46E0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1D9C2048AAE1006A46E0 /* BaseViewController.swift */; };
-		56BF1DA42048BBCE006A46E0 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1DA32048BBCE006A46E0 /* Arrow.swift */; };
 		56BF1DAE2048D253006A46E0 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1DAD2048D253006A46E0 /* GameState.swift */; };
-		56BF1DB02048D272006A46E0 /* NewGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1DAF2048D272006A46E0 /* NewGameState.swift */; };
 		56BF1DB3204978DB006A46E0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1DB2204978DB006A46E0 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5626D712204A260400C29A1E /* PinsPositioningGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningGameState.swift; sourceTree = "<group>"; };
-		5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionGameState.swift; sourceTree = "<group>"; };
-		564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallThrowingGameState.swift; sourceTree = "<group>"; };
+		56195584204BFFF900D004CA /* GameStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateController.swift; sourceTree = "<group>"; };
 		564CD2DD204B861C006F2CD4 /* SCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNode.swift; sourceTree = "<group>"; };
-		564DFFC4204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForThrowResultsGameState.swift; sourceTree = "<group>"; };
 		569032C620498B7900867939 /* PlayerSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionViewController.swift; sourceTree = "<group>"; };
-		569032C820498BB400867939 /* PinsPositioningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningViewController.swift; sourceTree = "<group>"; };
+		569032C820498BB400867939 /* PinsPositioningStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningStateController.swift; sourceTree = "<group>"; };
 		569032CA20498BD500867939 /* HighscoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
-		569032CC20498C1600867939 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		569032CE20498C9A00867939 /* ThrowResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowResultsViewController.swift; sourceTree = "<group>"; };
-		569032D020498CAA00867939 /* GameResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
+		569032CC20498C1600867939 /* BallThrowingStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallThrowingStateController.swift; sourceTree = "<group>"; };
+		569032CE20498C9A00867939 /* ThrowResultsStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowResultsStateController.swift; sourceTree = "<group>"; };
+		569032D020498CAA00867939 /* GameResultsStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultsStateController.swift; sourceTree = "<group>"; };
 		569032D32049A27400867939 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		569032D82049C24600867939 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		569032DB2049C52F00867939 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -74,9 +66,7 @@
 		56BF1D98204879D0006A46E0 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		56BF1D9A20487B41006A46E0 /* Allura-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Allura-Regular.ttf"; sourceTree = "<group>"; };
 		56BF1D9C2048AAE1006A46E0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		56BF1DA32048BBCE006A46E0 /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		56BF1DAD2048D253006A46E0 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		56BF1DAF2048D272006A46E0 /* NewGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameState.swift; sourceTree = "<group>"; };
 		56BF1DB2204978DB006A46E0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +81,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56195583204BFFDE00D004CA /* GameStates */ = {
+			isa = PBXGroup;
+			children = (
+				56BF1DAD2048D253006A46E0 /* GameState.swift */,
+				56195584204BFFF900D004CA /* GameStateController.swift */,
+				569032C820498BB400867939 /* PinsPositioningStateController.swift */,
+				569032CC20498C1600867939 /* BallThrowingStateController.swift */,
+				569032CE20498C9A00867939 /* ThrowResultsStateController.swift */,
+				569032D020498CAA00867939 /* GameResultsStateController.swift */,
+			);
+			path = GameStates;
+			sourceTree = "<group>";
+		};
 		569032D22049A24900867939 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +114,8 @@
 		569032DA2049C51600867939 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				56BF1DA22048BBC2006A46E0 /* Entities */,
+				56BF1DB2204978DB006A46E0 /* Game.swift */,
 				569032DB2049C52F00867939 /* Player.swift */,
 				56B761D22049E9850003A02B /* CurrentPlayers.swift */,
 			);
@@ -142,22 +147,10 @@
 				569032D72049C23100867939 /* Config */,
 				56BF1D9E2048ABD5006A46E0 /* Controllers */,
 				56BF1D91204786E7006A46E0 /* Extensions */,
-				56BF1D8C20478445006A46E0 /* Game */,
 				569032DA2049C51600867939 /* Models */,
 				56BF1DA12048AC6D006A46E0 /* Views */,
 			);
 			path = NanoChallenge5;
-			sourceTree = "<group>";
-		};
-		56BF1D8C20478445006A46E0 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				56BF1DAB2048D238006A46E0 /* GameStates */,
-				56BF1DA22048BBC2006A46E0 /* Entities */,
-				56BF1DB2204978DB006A46E0 /* Game.swift */,
-				56BF1DAD2048D253006A46E0 /* GameState.swift */,
-			);
-			path = Game;
 			sourceTree = "<group>";
 		};
 		56BF1D91204786E7006A46E0 /* Extensions */ = {
@@ -175,13 +168,10 @@
 			children = (
 				56BF1D9C2048AAE1006A46E0 /* BaseViewController.swift */,
 				56BF1D7C2047822E006A46E0 /* ARViewController.swift */,
-				56BF1D98204879D0006A46E0 /* TitleViewController.swift */,
 				569032CA20498BD500867939 /* HighscoresViewController.swift */,
+				56BF1D98204879D0006A46E0 /* TitleViewController.swift */,
 				569032C620498B7900867939 /* PlayerSelectionViewController.swift */,
-				569032C820498BB400867939 /* PinsPositioningViewController.swift */,
-				569032CC20498C1600867939 /* GameViewController.swift */,
-				569032CE20498C9A00867939 /* ThrowResultsViewController.swift */,
-				569032D020498CAA00867939 /* GameResultsViewController.swift */,
+				56195583204BFFDE00D004CA /* GameStates */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,22 +208,9 @@
 		56BF1DA22048BBC2006A46E0 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				56BF1DA32048BBCE006A46E0 /* Arrow.swift */,
 				56BF1D8F20478459006A46E0 /* Ball.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		56BF1DAB2048D238006A46E0 /* GameStates */ = {
-			isa = PBXGroup;
-			children = (
-				56BF1DAF2048D272006A46E0 /* NewGameState.swift */,
-				5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */,
-				5626D712204A260400C29A1E /* PinsPositioningGameState.swift */,
-				564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */,
-				564DFFC4204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift */,
-			);
-			path = GameStates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,32 +289,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				56B761CF2049E1DB0003A02B /* HighscoreTableViewCell.swift in Sources */,
-				564DFFC5204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift in Sources */,
 				56BF1D99204879D0006A46E0 /* TitleViewController.swift in Sources */,
-				569032CF20498C9A00867939 /* ThrowResultsViewController.swift in Sources */,
+				569032CF20498C9A00867939 /* ThrowResultsStateController.swift in Sources */,
 				569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */,
 				56BF1D9020478459006A46E0 /* Ball.swift in Sources */,
 				569032DC2049C52F00867939 /* Player.swift in Sources */,
 				56BF1D93204786F6006A46E0 /* SCNVector3.swift in Sources */,
 				56BF1D7D2047822E006A46E0 /* ARViewController.swift in Sources */,
 				56BF1DB3204978DB006A46E0 /* Game.swift in Sources */,
-				569032D120498CAA00867939 /* GameResultsViewController.swift in Sources */,
+				569032D120498CAA00867939 /* GameResultsStateController.swift in Sources */,
 				569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */,
-				569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */,
+				569032C920498BB400867939 /* PinsPositioningStateController.swift in Sources */,
 				564CD2DE204B861C006F2CD4 /* SCNNode.swift in Sources */,
-				564CD2DC204B7427006F2CD4 /* BallThrowingGameState.swift in Sources */,
-				5626D713204A260400C29A1E /* PinsPositioningGameState.swift in Sources */,
 				56BF1D952047884D006A46E0 /* matrix_float4x4.swift in Sources */,
 				56BF1D9D2048AAE1006A46E0 /* BaseViewController.swift in Sources */,
-				5626D715204A2C4600C29A1E /* PlayerSelectionGameState.swift in Sources */,
 				56BF1DAE2048D253006A46E0 /* GameState.swift in Sources */,
 				569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */,
 				56B761D32049E9850003A02B /* CurrentPlayers.swift in Sources */,
 				569032D92049C24600867939 /* Constants.swift in Sources */,
-				569032CD20498C1600867939 /* GameViewController.swift in Sources */,
+				56195585204BFFF900D004CA /* GameStateController.swift in Sources */,
+				569032CD20498C1600867939 /* BallThrowingStateController.swift in Sources */,
 				56BF1D792047822E006A46E0 /* AppDelegate.swift in Sources */,
-				56BF1DB02048D272006A46E0 /* NewGameState.swift in Sources */,
-				56BF1DA42048BBCE006A46E0 /* Arrow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

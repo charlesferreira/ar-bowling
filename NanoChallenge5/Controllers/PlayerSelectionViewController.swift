@@ -19,7 +19,6 @@ class PlayerSelectionViewController: BaseViewController {
         updateButtons()
         setupTapGesture()
         tableView.isEditing = true
-        Game.shared.state = PlayerSelectionGameState()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -32,7 +32,7 @@ extension Constants {
         // distância entre a câmera e o ponto de surgimento das bolas
         let spawnDepth = 1.0
         // multiplicador de velocidade da câmera pra um arremesso mais legal
-        let throwingIntensity = 1.33    //
+        let throwingIntensity = 1.5
     }
     
     struct UserDefaults {
