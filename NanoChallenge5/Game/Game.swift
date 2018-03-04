@@ -40,12 +40,12 @@ class Game {
     // câmera
     var cameraPreviousPosition: SCNVector3?
     var cameraCurrentPosition: SCNVector3!
+    var camera: ARCamera? {
+        return sceneView.session.currentFrame?.camera
+    }
     var cameraTranslation: SCNVector3 {
         guard let previousPosition = cameraPreviousPosition else { return SCNVector3Zero }
         return cameraCurrentPosition - previousPosition
-    }
-    var camera: ARCamera? {
-        return sceneView.session.currentFrame?.camera
     }
     var cameraVelocity: SCNVector3 {
         guard deltaTime != nil else { return SCNVector3Zero }
@@ -112,13 +112,7 @@ class Game {
     private func pinPhysicsBody() -> SCNPhysicsBody {
         let cylinder = SCNCylinder(radius: 0.15, height: 1)
         let cylinderShape = SCNPhysicsShape(geometry: cylinder, options: nil)
-        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: cylinderShape)
-        physicsBody.mass = 1
-        physicsBody.restitution = 0.5
-        physicsBody.friction = 0.7
-        physicsBody.damping = 0.2
-        
-        return physicsBody
+        return SCNPhysicsBody(type: .dynamic, shape: cylinderShape)
     }
     
     func showBallPlaceholder() {
@@ -126,13 +120,15 @@ class Game {
     }
     
     func hideBallPlaceholder() {
+        ballPlaceholder.removeAllActions()
         ballPlaceholder.opacity = 0
     }
     
     func throwBall() {
         hideBallPlaceholder()
         
-        let ball = Ball.create(at: spawnPoint, withVelocity: cameraVelocity)
+        let velocity = cameraVelocity * Constants.game.throwingIntensity
+        let ball = Ball.create(at: spawnPoint, withVelocity: velocity)
         scene.rootNode.addChildNode(ball)
     }
 }

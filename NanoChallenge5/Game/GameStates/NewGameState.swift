@@ -12,7 +12,6 @@ struct NewGameState: GameState {
     
     func setup(game: Game) {
         game.sceneView.autoenablesDefaultLighting = true
-        game.sceneView.showsStatistics = true
         game.scene = SCNScene()
         game.pins = loadPins(into: game.scene.rootNode)
         game.ballPlaceholder = createBallPlaceholder(game: game)
@@ -23,7 +22,7 @@ struct NewGameState: GameState {
     func update(game: Game, at time: TimeInterval) {}
     
     private func loadPins(into node: SCNNode) -> SCNNode {
-        let pins = SCNScene(named: "art.scnassets/pins.scn")!.rootNode
+        let pins = SCNScene(named: Constants.models.pins)!.rootNode
         pins.isHidden = true
         pins.position = SCNVector3Make(0, -1, -5)
         node.addChildNode(pins)

@@ -11,6 +11,7 @@
 		5626D715204A2C4600C29A1E /* PlayerSelectionGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */; };
 		564CD2DC204B7427006F2CD4 /* BallThrowingGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */; };
 		564CD2DE204B861C006F2CD4 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD2DD204B861C006F2CD4 /* SCNNode.swift */; };
+		564DFFC5204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DFFC4204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift */; };
 		569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C620498B7900867939 /* PlayerSelectionViewController.swift */; };
 		569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C820498BB400867939 /* PinsPositioningViewController.swift */; };
 		569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CA20498BD500867939 /* HighscoresViewController.swift */; };
@@ -46,6 +47,7 @@
 		5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionGameState.swift; sourceTree = "<group>"; };
 		564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallThrowingGameState.swift; sourceTree = "<group>"; };
 		564CD2DD204B861C006F2CD4 /* SCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNode.swift; sourceTree = "<group>"; };
+		564DFFC4204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForThrowResultsGameState.swift; sourceTree = "<group>"; };
 		569032C620498B7900867939 /* PlayerSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionViewController.swift; sourceTree = "<group>"; };
 		569032C820498BB400867939 /* PinsPositioningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningViewController.swift; sourceTree = "<group>"; };
 		569032CA20498BD500867939 /* HighscoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */,
 				5626D712204A260400C29A1E /* PinsPositioningGameState.swift */,
 				564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */,
+				564DFFC4204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift */,
 			);
 			path = GameStates;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56B761CF2049E1DB0003A02B /* HighscoreTableViewCell.swift in Sources */,
+				564DFFC5204BB7F700A77A59 /* WaitingForThrowResultsGameState.swift in Sources */,
 				56BF1D99204879D0006A46E0 /* TitleViewController.swift in Sources */,
 				569032CF20498C9A00867939 /* ThrowResultsViewController.swift in Sources */,
 				569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */,

@@ -24,7 +24,7 @@ struct PinsPositioningGameState: GameState {
         
         let hits = view.hitTest(game.viewCenter, types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane])
         if let position = hits.last?.worldTransform.position {
-            game.pins!.position = position
+            game.pins!.position = position + SCNVector3(0, -0.3, 0)
         }
     }
 }

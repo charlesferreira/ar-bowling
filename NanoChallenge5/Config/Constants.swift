@@ -28,8 +28,11 @@ extension Constants {
     struct Game {
         let minPlayers = 1
         let maxPlayers = 4
-        let spawnDepth = 1.0
         let ballLifeTime = 5.0
+        // distância entre a câmera e o ponto de surgimento das bolas
+        let spawnDepth = 1.0
+        // multiplicador de velocidade da câmera pra um arremesso mais legal
+        let throwingIntensity = 1.33    //
     }
     
     struct UserDefaults {
@@ -38,6 +41,7 @@ extension Constants {
     
     struct Models {
         let ball = "art.scnassets/ball.scn"
+        let pins = "art.scnassets/pins.scn"
     }
     
     struct FX {
