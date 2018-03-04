@@ -22,6 +22,7 @@
 		569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D32049A27400867939 /* PlayerTableViewCell.swift */; };
 		569032D92049C24600867939 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032D82049C24600867939 /* Constants.swift */; };
 		569032DC2049C52F00867939 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032DB2049C52F00867939 /* Player.swift */; };
+		569A38A9204C82A600B2EA36 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A38A8204C82A600B2EA36 /* Frame.swift */; };
 		56B761CF2049E1DB0003A02B /* HighscoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B761CE2049E1DB0003A02B /* HighscoreTableViewCell.swift */; };
 		56B761D32049E9850003A02B /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B761D22049E9850003A02B /* Match.swift */; };
 		56BF1D792047822E006A46E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF1D782047822E006A46E0 /* AppDelegate.swift */; };
@@ -57,6 +58,7 @@
 		569032D32049A27400867939 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		569032D82049C24600867939 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		569032DB2049C52F00867939 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		569A38A8204C82A600B2EA36 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		56B761CE2049E1DB0003A02B /* HighscoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTableViewCell.swift; sourceTree = "<group>"; };
 		56B761D22049E9850003A02B /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		56BF1D752047822E006A46E0 /* NanoChallenge5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,9 +128,10 @@
 			children = (
 				56BF1DA22048BBC2006A46E0 /* Entities */,
 				56BF1DB2204978DB006A46E0 /* Game.swift */,
+				56774BF2204C30B40047D569 /* Camera.swift */,
 				569032DB2049C52F00867939 /* Player.swift */,
 				56B761D22049E9850003A02B /* Match.swift */,
-				56774BF2204C30B40047D569 /* Camera.swift */,
+				569A38A8204C82A600B2EA36 /* Frame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569A38A9204C82A600B2EA36 /* Frame.swift in Sources */,
 				568E3C27204C22A600E6C906 /* Floor.swift in Sources */,
 				56B761CF2049E1DB0003A02B /* HighscoreTableViewCell.swift in Sources */,
 				56BF1D99204879D0006A46E0 /* TitleViewController.swift in Sources */,

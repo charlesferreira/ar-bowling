@@ -352,7 +352,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSt-1g-vAP">
-                                <rect key="frame" x="37.5" y="204.5" width="300" height="106"/>
+                                <rect key="frame" x="37.5" y="290.5" width="300" height="106"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rc-nC-xJk">
                                         <rect key="frame" x="-0.5" y="19.5" width="300" height="66"/>
@@ -382,7 +382,7 @@ pins placement</string>
                         <constraints>
                             <constraint firstItem="bSt-1g-vAP" firstAttribute="width" secondItem="3ft-0R-K1r" secondAttribute="width" multiplier="0.8" id="L0M-3u-VZE"/>
                             <constraint firstItem="bSt-1g-vAP" firstAttribute="centerX" secondItem="C8G-qF-Sdi" secondAttribute="centerX" id="TW2-pl-x9r"/>
-                            <constraint firstItem="bSt-1g-vAP" firstAttribute="centerY" secondItem="C8G-qF-Sdi" secondAttribute="centerY" multiplier="0.75" id="w9p-CW-cjx"/>
+                            <constraint firstItem="bSt-1g-vAP" firstAttribute="centerY" secondItem="C8G-qF-Sdi" secondAttribute="centerY" id="w9p-CW-cjx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C8G-qF-Sdi"/>
                     </view>
@@ -400,7 +400,7 @@ pins placement</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWN-Ni-nXO">
-                                <rect key="frame" x="37" y="221" width="300" height="73"/>
+                                <rect key="frame" x="37" y="307" width="300" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3K-VO-Vda">
                                         <rect key="frame" x="0.0" y="20" width="300" height="33"/>
@@ -425,23 +425,71 @@ pins placement</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFl-Fo-1qN">
-                                <rect key="frame" x="123" y="40" width="130" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="e2T-in-6Ib"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFl-Fo-1qN">
+                                <rect key="frame" x="122.5" y="28" width="130" height="60"/>
                                 <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="32"/>
                                 <color key="textColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxi-KL-4ce">
+                                <rect key="frame" x="8" y="28" width="60" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln6-HT-B2b">
+                                        <rect key="frame" x="24" y="13.5" width="13" height="33"/>
+                                        <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.50425406678082196" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ln6-HT-B2b" firstAttribute="centerX" secondItem="vxi-KL-4ce" secondAttribute="centerX" id="9QN-ae-505"/>
+                                    <constraint firstAttribute="width" secondItem="vxi-KL-4ce" secondAttribute="height" multiplier="1:1" id="O2P-eM-Jmv"/>
+                                    <constraint firstItem="Ln6-HT-B2b" firstAttribute="centerY" secondItem="vxi-KL-4ce" secondAttribute="centerY" id="Pny-Rb-ZCE"/>
+                                    <constraint firstAttribute="width" constant="60" id="SUU-pU-zkW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRr-3Y-5Ri">
+                                <rect key="frame" x="18" y="96" width="40" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-uj-TWp">
+                                        <rect key="frame" x="15" y="7.5" width="10" height="25"/>
+                                        <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74684289383561642" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NA2-uj-TWp" firstAttribute="centerX" secondItem="PRr-3Y-5Ri" secondAttribute="centerX" id="CA1-wr-5C0"/>
+                                    <constraint firstAttribute="width" secondItem="PRr-3Y-5Ri" secondAttribute="height" id="YTc-4S-8fY"/>
+                                    <constraint firstAttribute="width" constant="40" id="ehi-3E-JnO"/>
+                                    <constraint firstItem="NA2-uj-TWp" firstAttribute="centerY" secondItem="PRr-3Y-5Ri" secondAttribute="centerY" id="xLC-HA-a7L"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EWN-Ni-nXO" firstAttribute="centerY" secondItem="zOp-3q-sjk" secondAttribute="centerY" multiplier="0.75" id="1OB-WR-Ekr"/>
+                            <constraint firstItem="EWN-Ni-nXO" firstAttribute="centerY" secondItem="zOp-3q-sjk" secondAttribute="centerY" id="1OB-WR-Ekr"/>
+                            <constraint firstItem="SFl-Fo-1qN" firstAttribute="centerY" secondItem="vxi-KL-4ce" secondAttribute="centerY" id="4qd-fM-0Ed"/>
+                            <constraint firstItem="vxi-KL-4ce" firstAttribute="top" secondItem="zOp-3q-sjk" secondAttribute="top" constant="8" id="DEQ-Ic-e3s"/>
                             <constraint firstItem="EWN-Ni-nXO" firstAttribute="centerX" secondItem="zOp-3q-sjk" secondAttribute="centerX" id="O0p-YB-ZHU"/>
+                            <constraint firstItem="vxi-KL-4ce" firstAttribute="leading" secondItem="zOp-3q-sjk" secondAttribute="leading" constant="8" id="OL7-5U-bhg"/>
                             <constraint firstItem="EWN-Ni-nXO" firstAttribute="width" secondItem="DW3-Xl-rM5" secondAttribute="width" multiplier="0.8" id="Rf7-Ib-W3Y"/>
-                            <constraint firstItem="SFl-Fo-1qN" firstAttribute="centerX" secondItem="zOp-3q-sjk" secondAttribute="centerX" id="aBo-aD-aqz"/>
-                            <constraint firstItem="SFl-Fo-1qN" firstAttribute="top" secondItem="zOp-3q-sjk" secondAttribute="top" constant="20" id="fHf-dA-qao"/>
+                            <constraint firstItem="SFl-Fo-1qN" firstAttribute="centerX" secondItem="zOp-3q-sjk" secondAttribute="centerX" id="Vh7-gq-pAB"/>
+                            <constraint firstItem="SFl-Fo-1qN" firstAttribute="height" secondItem="vxi-KL-4ce" secondAttribute="height" id="cIf-Hr-eau"/>
+                            <constraint firstItem="PRr-3Y-5Ri" firstAttribute="top" secondItem="vxi-KL-4ce" secondAttribute="bottom" constant="8" id="eZO-Ii-lhG"/>
+                            <constraint firstItem="PRr-3Y-5Ri" firstAttribute="centerX" secondItem="vxi-KL-4ce" secondAttribute="centerX" id="f1e-7C-AhD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zOp-3q-sjk"/>
                     </view>
@@ -451,7 +499,7 @@ pins placement</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUw-bK-2zE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5081" y="32"/>
+            <point key="canvasLocation" x="5080.8000000000002" y="31.934032983508249"/>
         </scene>
         <!--Highscores View Controller-->
         <scene sceneID="OrT-PN-Glx">

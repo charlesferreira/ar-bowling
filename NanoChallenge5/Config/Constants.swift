@@ -18,7 +18,7 @@ struct Constants {
     struct Game {
         static let maxPlayers: Int = 4
         static let ballLifeTime: Double = 5
-        static let pinLifeTimeAfterKnockDown: Double = 1
+        static let pinLifeTimeAfterKnockDown: Double = 2
         static let spawnDepth: Double = 1
         static let throwingIntensity: Double = 2.5
     }
@@ -39,7 +39,7 @@ struct Constants {
     struct FX {
         static let placeholderFadeDuration = 0.1
         static let ballFadeOutDuration = 1.0
-        static let pinFadeOutDuration = 1.0
+        static let pinFadeOutDuration = 0.5
     }
     
     struct Text {

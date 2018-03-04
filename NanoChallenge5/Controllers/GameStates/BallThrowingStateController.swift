@@ -12,8 +12,9 @@ class BallThrowingStateController: GameStateController {
     
     @IBOutlet weak var instructionLabel: UILabel!
     
-    var ballsThrown = 0
     var canThrow = true
+    var ballCount = 0
+    var pinsLeft = 10
     
     func setup() {
         resetPins()
@@ -37,8 +38,18 @@ class BallThrowingStateController: GameStateController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard canThrow else { return }
-//        canThrow = false
+        canThrow = false
+        ballCount += 1
         game.throwBall()
+        waitForBallToFadeOut()
+    }
+    
+    private func waitForBallToFadeOut() {
+        Timer.scheduledTimer(withTimeInterval: Constants.Game.ballLifeTime, repeats: false) { [weak self] _ in
+            if self?.pinsLeft == 0 {
+//                showFrameResults()
+            }
+        }
     }
     
     private func resetPins() {
@@ -53,11 +64,15 @@ extension BallThrowingStateController: SCNPhysicsContactDelegate {
         let nodes = [contact.nodeA, contact.nodeB]
         guard let pinHead = nodes.first(where: { $0.name == Constants.NodeNames.pinHead }) else { return }
         
+        // animations
         let delay = SCNAction.wait(duration: Constants.Game.pinLifeTimeAfterKnockDown)
         let fadeOut = SCNAction.fadeOut(duration: Constants.FX.pinFadeOutDuration)
         let remove = SCNAction.run { $0.removeFromParentNode() }
         pinHead.parent?.runAction(SCNAction.sequence([delay, fadeOut, remove]))
         pinHead.removeFromParentNode()
+        
+        // contabiliza o pino derrubado
+        pinsLeft -= 1
     }
     
 }
