@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5626D713204A260400C29A1E /* PinsPositioningGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626D712204A260400C29A1E /* PinsPositioningGameState.swift */; };
 		5626D715204A2C4600C29A1E /* PlayerSelectionGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */; };
+		564CD2DC204B7427006F2CD4 /* BallThrowingGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */; };
+		564CD2DE204B861C006F2CD4 /* SCNNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CD2DD204B861C006F2CD4 /* SCNNode.swift */; };
 		569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C620498B7900867939 /* PlayerSelectionViewController.swift */; };
 		569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C820498BB400867939 /* PinsPositioningViewController.swift */; };
 		569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CA20498BD500867939 /* HighscoresViewController.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		5626D712204A260400C29A1E /* PinsPositioningGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningGameState.swift; sourceTree = "<group>"; };
 		5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionGameState.swift; sourceTree = "<group>"; };
+		564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallThrowingGameState.swift; sourceTree = "<group>"; };
+		564CD2DD204B861C006F2CD4 /* SCNNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNode.swift; sourceTree = "<group>"; };
 		569032C620498B7900867939 /* PlayerSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionViewController.swift; sourceTree = "<group>"; };
 		569032C820498BB400867939 /* PinsPositioningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningViewController.swift; sourceTree = "<group>"; };
 		569032CA20498BD500867939 /* HighscoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		56BF1D91204786E7006A46E0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				564CD2DD204B861C006F2CD4 /* SCNNode.swift */,
 				56BF1D92204786F6006A46E0 /* SCNVector3.swift */,
 				56BF1D942047884D006A46E0 /* matrix_float4x4.swift */,
 			);
@@ -221,8 +226,9 @@
 			isa = PBXGroup;
 			children = (
 				56BF1DAF2048D272006A46E0 /* NewGameState.swift */,
-				5626D712204A260400C29A1E /* PinsPositioningGameState.swift */,
 				5626D714204A2C4600C29A1E /* PlayerSelectionGameState.swift */,
+				5626D712204A260400C29A1E /* PinsPositioningGameState.swift */,
+				564CD2DB204B7427006F2CD4 /* BallThrowingGameState.swift */,
 			);
 			path = GameStates;
 			sourceTree = "<group>";
@@ -314,6 +320,8 @@
 				569032D120498CAA00867939 /* GameResultsViewController.swift in Sources */,
 				569032D42049A27400867939 /* PlayerTableViewCell.swift in Sources */,
 				569032C920498BB400867939 /* PinsPositioningViewController.swift in Sources */,
+				564CD2DE204B861C006F2CD4 /* SCNNode.swift in Sources */,
+				564CD2DC204B7427006F2CD4 /* BallThrowingGameState.swift in Sources */,
 				5626D713204A260400C29A1E /* PinsPositioningGameState.swift in Sources */,
 				56BF1D952047884D006A46E0 /* matrix_float4x4.swift in Sources */,
 				56BF1D9D2048AAE1006A46E0 /* BaseViewController.swift in Sources */,

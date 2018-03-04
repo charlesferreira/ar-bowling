@@ -6,8 +6,16 @@
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
-struct Ball {
+import SceneKit
+
+class Ball: SCNNode {
     
+    override init() {
+        super.init()
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
 }

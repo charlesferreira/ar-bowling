@@ -14,6 +14,7 @@ struct NewGameState: GameState {
         game.sceneView.autoenablesDefaultLighting = true
         game.scene = SCNScene()
         game.pins = loadPins(into: game.scene.rootNode)
+        game.ball = loadBall(game: game)
     }
     
     func teardown(game: Game) {}
@@ -25,5 +26,9 @@ struct NewGameState: GameState {
         pins.position = SCNVector3Make(0, -1, -5)
         node.addChildNode(pins)
         return pins
+    }
+    
+    private func loadBall(game: Game) -> SCNNode {
+        return SCNScene(named: "art.scnassets/ball.scn")!.rootNode
     }
 }

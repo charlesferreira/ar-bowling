@@ -11,12 +11,16 @@ import ARKit
 
 class Game {
     
+    // singleton
     static let shared = Game()
+    private init() {}
     
+    // view
     weak var sceneView: ARSCNView!
-    
     var viewCenter: CGPoint!
-    //var ball: SCNNode!
+    
+    // entities
+    var ball: SCNNode!
     var pins: SCNNode!
     
     // convenience accessor
@@ -25,6 +29,7 @@ class Game {
         set { sceneView.scene = newValue }
     }
     
+    // máquina de estados
     var state: GameState? {
         didSet {
             oldValue?.teardown(game: self)
@@ -32,11 +37,12 @@ class Game {
         }
     }
     
+    // câmera
+    var cameraPreviousPosition: SCNVector3?
+    var cameraCurrentPosition: SCNVector3?
     var camera: ARCamera? {
         return sceneView.session.currentFrame?.camera
     }
-    
-    private init() {}
     
     func setup(sceneView: ARSCNView) {
         self.sceneView = sceneView
@@ -65,7 +71,7 @@ class Game {
         let floorNode = SCNNode(geometry: floor)
         floorNode.position = pins.position
         floorNode.position.y -= Float(floor.height / 2)
-//        floorNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        floorNode.opacity = 0
         scene.rootNode.addChildNode(floorNode)
         
         // physics
@@ -81,8 +87,10 @@ class Game {
     }
     
     private func pinPhysicsBody() -> SCNPhysicsBody {
-        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-        physicsBody.mass = 3
+        let cylinder = SCNCylinder(radius: 0.15, height: 1)
+        let cylinderShape = SCNPhysicsShape(geometry: cylinder, options: nil)
+        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: cylinderShape)
+        physicsBody.mass = 1
         physicsBody.restitution = 0.5
         physicsBody.friction = 0.7
         physicsBody.damping = 0.2
@@ -91,9 +99,26 @@ class Game {
     }
     
     func throwBall() {
-        let ball = SCNScene(named: "art.scnassets/ball.scn")!.rootNode
-        let transform = matrix_float4x4(sceneView.pointOfView!.worldTransform)
-        ball.position = transform.position
+        // node
+        let position = sceneView.pointOfView!.position
+        let direction = sceneView.pointOfView!.direction
+        ball.position = position + direction
         scene.rootNode.addChildNode(ball)
+        
+        // física
+        ball.physicsBody = ballPhysicsBody()
+        ball.physicsBody!.velocity = direction * 8.0
+    }
+    
+    private func ballPhysicsBody() -> SCNPhysicsBody {
+        let sphere = SCNSphere(radius: 0.25)
+        let sphereShape = SCNPhysicsShape(geometry: sphere, options: nil)
+        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: sphereShape)
+        physicsBody.mass = 10
+        physicsBody.restitution = 0.8
+        physicsBody.friction = 0.5
+        physicsBody.damping = 0.0
+        
+        return physicsBody
     }
 }
