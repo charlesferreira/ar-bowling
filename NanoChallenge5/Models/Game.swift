@@ -29,6 +29,8 @@ import ARKit
         }
     }
     
+    var match = Match()
+    
     var camera: Camera!
     
     var spawnPoint: SCNVector3 {

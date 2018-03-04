@@ -13,7 +13,7 @@
 		568E3C25204C21F400E6C906 /* Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E3C24204C21F400E6C906 /* Physics.swift */; };
 		568E3C27204C22A600E6C906 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E3C26204C22A600E6C906 /* Floor.swift */; };
 		568E3C29204C277700E6C906 /* PinSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E3C28204C277700E6C906 /* PinSet.swift */; };
-		569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C620498B7900867939 /* PlayerSelectionViewController.swift */; };
+		569032C720498B7900867939 /* PlayerSelectionStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C620498B7900867939 /* PlayerSelectionStateController.swift */; };
 		569032C920498BB400867939 /* PinsPositioningStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032C820498BB400867939 /* PinsPositioningStateController.swift */; };
 		569032CB20498BD500867939 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CA20498BD500867939 /* HighscoresViewController.swift */; };
 		569032CD20498C1600867939 /* BallThrowingStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569032CC20498C1600867939 /* BallThrowingStateController.swift */; };
@@ -48,7 +48,7 @@
 		568E3C24204C21F400E6C906 /* Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics.swift; sourceTree = "<group>"; };
 		568E3C26204C22A600E6C906 /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
 		568E3C28204C277700E6C906 /* PinSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSet.swift; sourceTree = "<group>"; };
-		569032C620498B7900867939 /* PlayerSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionViewController.swift; sourceTree = "<group>"; };
+		569032C620498B7900867939 /* PlayerSelectionStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionStateController.swift; sourceTree = "<group>"; };
 		569032C820498BB400867939 /* PinsPositioningStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsPositioningStateController.swift; sourceTree = "<group>"; };
 		569032CA20498BD500867939 /* HighscoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
 		569032CC20498C1600867939 /* BallThrowingStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallThrowingStateController.swift; sourceTree = "<group>"; };
@@ -94,6 +94,7 @@
 			children = (
 				56BF1DAD2048D253006A46E0 /* GameState.swift */,
 				56195584204BFFF900D004CA /* GameStateController.swift */,
+				569032C620498B7900867939 /* PlayerSelectionStateController.swift */,
 				569032C820498BB400867939 /* PinsPositioningStateController.swift */,
 				569032CC20498C1600867939 /* BallThrowingStateController.swift */,
 				569032CE20498C9A00867939 /* ThrowResultsStateController.swift */,
@@ -180,7 +181,6 @@
 				56BF1D7C2047822E006A46E0 /* ARViewController.swift */,
 				569032CA20498BD500867939 /* HighscoresViewController.swift */,
 				56BF1D98204879D0006A46E0 /* TitleViewController.swift */,
-				569032C620498B7900867939 /* PlayerSelectionViewController.swift */,
 				56195583204BFFDE00D004CA /* GameStates */,
 			);
 			path = Controllers;
@@ -304,7 +304,7 @@
 				56B761CF2049E1DB0003A02B /* HighscoreTableViewCell.swift in Sources */,
 				56BF1D99204879D0006A46E0 /* TitleViewController.swift in Sources */,
 				569032CF20498C9A00867939 /* ThrowResultsStateController.swift in Sources */,
-				569032C720498B7900867939 /* PlayerSelectionViewController.swift in Sources */,
+				569032C720498B7900867939 /* PlayerSelectionStateController.swift in Sources */,
 				56BF1D9020478459006A46E0 /* Ball.swift in Sources */,
 				568E3C29204C277700E6C906 /* PinSet.swift in Sources */,
 				569032DC2049C52F00867939 /* Player.swift in Sources */,

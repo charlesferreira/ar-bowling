@@ -8,11 +8,13 @@
 
 import UIKit
 
-class PlayerSelectionViewController: BaseViewController {
+class PlayerSelectionStateController: GameStateController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
+    
+    private var match: Match { return game.match }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class PlayerSelectionViewController: BaseViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        Match.instance.addPlayer(Player())
+        match.addPlayer(Player())
         updateButtons()
         tableView.reloadData()
     }
@@ -38,22 +40,25 @@ class PlayerSelectionViewController: BaseViewController {
     }
     
     private func updateButtons() {
-        let numberOfPlayers = Match.instance.players.count
+        let numberOfPlayers = match.players.count
         addButton.isHidden = numberOfPlayers >= Constants.Game.maxPlayers
-        startButton.isEnabled = numberOfPlayers >= Constants.Game.minPlayers
+        
+        let namedPlayers = match.players.filter { !$0.name.isEmpty }.count
+        startButton.isEnabled = numberOfPlayers == namedPlayers && namedPlayers > 0
     }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+        updateButtons()
     }
     
     @IBAction func backToPlayerSelection(unwindSegue: UIStoryboardSegue) {}
 }
 
-extension PlayerSelectionViewController: UITableViewDataSource {
+extension PlayerSelectionStateController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Match.instance.players.count
+        return match.players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,16 +67,16 @@ extension PlayerSelectionViewController: UITableViewDataSource {
         }
 
         cell.delegate = self
-        cell.player = Match.instance.players[indexPath.row]
+        cell.player = match.players[indexPath.row]
         
         return cell
     }
 }
 
-extension PlayerSelectionViewController: UITableViewDelegate {
+extension PlayerSelectionStateController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        Match.instance.movePlayer(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        match.movePlayer(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
@@ -84,10 +89,10 @@ extension PlayerSelectionViewController: UITableViewDelegate {
 }
 
 
-extension PlayerSelectionViewController: PlayerTableViewCellDelegate {
+extension PlayerSelectionStateController: PlayerTableViewCellDelegate {
     
     func cell(_ cell: PlayerTableViewCell, didRemovePlayer player: Player) {
-        Match.instance.removePlayer(player)
+        match.removePlayer(player)
         updateButtons()
         tableView.reloadData()
     }

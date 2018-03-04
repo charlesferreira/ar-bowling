@@ -8,11 +8,7 @@
 
 class Match {
     
-    static let instance = Match()
-    
     private (set) var players = [Player()]
-    
-    private init() {}
     
     func addPlayer(_ player: Player) {
         players.append(player)

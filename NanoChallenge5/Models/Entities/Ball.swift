@@ -63,9 +63,11 @@ class Ball: SCNNode {
         let sphere = SCNSphere(radius: 0.2)
         let sphereShape = SCNPhysicsShape(geometry: sphere, options: nil)
         physicsBody = SCNPhysicsBody(type: .dynamic, shape: sphereShape)
-        physicsBody!.mass = 10
+        physicsBody!.categoryBitMask = Physics.CategoryBitMask.ball
+        physicsBody!.collisionBitMask = Physics.CategoryBitMask.allSolids
+        physicsBody!.mass = 20
         physicsBody!.restitution = 0.8
-        physicsBody!.friction = 0.3
+        physicsBody!.friction = 0.1
         physicsBody!.damping = 0.0
     }
 }

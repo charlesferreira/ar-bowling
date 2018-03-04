@@ -26,6 +26,7 @@ class Floor: SCNNode {
         physicsBody = SCNPhysicsBody(type: .static, shape: nil)
         physicsBody!.restitution = 0.4
         physicsBody!.categoryBitMask = Physics.CategoryBitMask.floor
+        physicsBody!.collisionBitMask = Physics.CategoryBitMask.allSolids
     }
     
     private func move(to position: SCNVector3) {
