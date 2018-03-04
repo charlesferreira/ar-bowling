@@ -13,6 +13,8 @@ struct Constants {
     static let player = Player()
     static let game = Game()
     static let userDefaults = UserDefaults()
+    static let models = Models()
+    static let fx = FX()
     
     private init() {}
 }
@@ -26,10 +28,20 @@ extension Constants {
     struct Game {
         let minPlayers = 1
         let maxPlayers = 4
+        let spawnDepth = 1.0
+        let ballLifeTime = 5.0
     }
     
     struct UserDefaults {
         let keyForHighscores = "highscores"
     }
     
+    struct Models {
+        let ball = "art.scnassets/ball.scn"
+    }
+    
+    struct FX {
+        let placeholderFadeDuration = 0.1
+        let ballFadeOutDuration = 1.0
+    }
 }

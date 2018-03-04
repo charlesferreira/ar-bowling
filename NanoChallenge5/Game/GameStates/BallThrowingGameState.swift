@@ -18,9 +18,12 @@ struct BallThrowingGameState: GameState {
     func teardown(game: Game) {
     }
     
-    func update(game: Game) {
+    func update(game: Game, at time: TimeInterval) {
         game.cameraPreviousPosition = game.cameraCurrentPosition
         game.cameraCurrentPosition = game.camera?.transform.position
+        
+        game.previousTime = game.currentTime
+        game.currentTime = time
     }
 }
 

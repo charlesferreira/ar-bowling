@@ -20,7 +20,7 @@ class Game {
     var viewCenter: CGPoint!
     
     // entities
-    var ball: SCNNode!
+    var ballPlaceholder: SCNNode!
     var pins: SCNNode!
     
     // convenience accessor
@@ -39,9 +39,32 @@ class Game {
     
     // câmera
     var cameraPreviousPosition: SCNVector3?
-    var cameraCurrentPosition: SCNVector3?
+    var cameraCurrentPosition: SCNVector3!
+    var cameraTranslation: SCNVector3 {
+        guard let previousPosition = cameraPreviousPosition else { return SCNVector3Zero }
+        return cameraCurrentPosition - previousPosition
+    }
     var camera: ARCamera? {
         return sceneView.session.currentFrame?.camera
+    }
+    var cameraVelocity: SCNVector3 {
+        guard deltaTime != nil else { return SCNVector3Zero }
+        return cameraTranslation / Float(deltaTime!)
+    }
+    
+    // delta time
+    var previousTime: TimeInterval?
+    var currentTime: TimeInterval!
+    var deltaTime: TimeInterval? {
+        guard previousTime != nil else { return nil }
+        return currentTime - previousTime!
+    }
+    
+    // spawn
+    var spawnPoint: SCNVector3 {
+        let position = sceneView.pointOfView!.position
+        let direction = sceneView.pointOfView!.direction
+        return position + direction * Constants.game.spawnDepth
     }
     
     func setup(sceneView: ARSCNView) {
@@ -61,8 +84,8 @@ class Game {
         sceneView.session.pause()
     }
     
-    func update() {
-        state?.update(game: self)
+    func update(at time: TimeInterval) {
+        state?.update(game: self, at: time)
     }
     
     func createFloorNode() {
@@ -98,27 +121,18 @@ class Game {
         return physicsBody
     }
     
-    func throwBall() {
-        // node
-        let position = sceneView.pointOfView!.position
-        let direction = sceneView.pointOfView!.direction
-        ball.position = position + direction
-        scene.rootNode.addChildNode(ball)
-        
-        // física
-        ball.physicsBody = ballPhysicsBody()
-        ball.physicsBody!.velocity = direction * 8.0
+    func showBallPlaceholder() {
+        ballPlaceholder.runAction(SCNAction.fadeIn(duration: Constants.fx.placeholderFadeDuration))
     }
     
-    private func ballPhysicsBody() -> SCNPhysicsBody {
-        let sphere = SCNSphere(radius: 0.25)
-        let sphereShape = SCNPhysicsShape(geometry: sphere, options: nil)
-        let physicsBody = SCNPhysicsBody(type: .dynamic, shape: sphereShape)
-        physicsBody.mass = 10
-        physicsBody.restitution = 0.8
-        physicsBody.friction = 0.5
-        physicsBody.damping = 0.0
+    func hideBallPlaceholder() {
+        ballPlaceholder.opacity = 0
+    }
+    
+    func throwBall() {
+        hideBallPlaceholder()
         
-        return physicsBody
+        let ball = Ball.create(at: spawnPoint, withVelocity: cameraVelocity)
+        scene.rootNode.addChildNode(ball)
     }
 }

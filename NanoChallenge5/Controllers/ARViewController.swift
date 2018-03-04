@@ -37,6 +37,6 @@ class ARViewController: BaseViewController {
 extension ARViewController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        Game.shared.update()
+        Game.shared.update(at: time)
     }
 }

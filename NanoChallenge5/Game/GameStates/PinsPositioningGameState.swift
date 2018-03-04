@@ -10,19 +10,20 @@ import ARKit
 
 struct PinsPositioningGameState: GameState {
     
-    func setup(game: Game) {}
+    func setup(game: Game) {
+        game.pins.isHidden = false
+    }
     
     func teardown(game: Game) {
         game.createFloorNode()
         game.enablePhysics()
     }
     
-    func update(game: Game) {
+    func update(game: Game, at time: TimeInterval) {
         guard let view = game.sceneView else { return }
         
         let hits = view.hitTest(game.viewCenter, types: [.existingPlaneUsingExtent, .estimatedHorizontalPlane])
         if let position = hits.last?.worldTransform.position {
-            game.pins!.isHidden = false
             game.pins!.position = position
         }
     }

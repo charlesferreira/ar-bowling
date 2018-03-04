@@ -6,11 +6,13 @@
 //  Copyright © 2018 Charles Ferreira. All rights reserved.
 //
 
+import Foundation
+
 protocol GameState {
     
     func setup(game: Game)
     
     func teardown(game: Game)
     
-    func update(game: Game)
+    func update(game: Game, at time: TimeInterval)
 }
