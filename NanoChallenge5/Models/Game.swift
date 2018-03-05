@@ -29,7 +29,7 @@ import ARKit
         }
     }
     
-    var match = Match()
+    var scoreboard = Scoreboard()
     
     var camera: Camera!
     

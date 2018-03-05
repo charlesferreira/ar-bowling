@@ -16,6 +16,7 @@ struct Constants {
     }
     
     struct Game {
+        static let numberOfFrames: Int = 10
         static let maxPlayers: Int = 4
         static let ballLifeTime: Double = 5
         static let pinLifeTimeAfterKnockDown: Double = 2

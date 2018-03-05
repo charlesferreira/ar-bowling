@@ -9,6 +9,4 @@
 class Player {
     
     var name: String = Constants.Player.defaultPlayerName
-    var score: Int = 0
-    
 }

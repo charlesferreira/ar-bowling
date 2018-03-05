@@ -30,7 +30,8 @@ class ARViewController: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        performSegue(withIdentifier: "ShowTitle", sender: self)
+//        performSegue(withIdentifier: "ShowTitle", sender: self)
+        performSegue(withIdentifier: "ScoreboardDemo", sender: self)
     }
 }
 

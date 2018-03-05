@@ -10,16 +10,20 @@ import SceneKit
 
 class BallThrowingStateController: GameStateController {
     
+    @IBOutlet weak var currentBallLabel: UILabel!
+    @IBOutlet weak var currentFrameLabel: UILabel!
+    @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
     
     var canThrow = true
     var ballCount = 0
-    var pinsLeft = 10
+    var pins = 0
     
     func setup() {
         resetPins()
         instructionLabel.text = Constants.Text.instructionsHold
         game.sceneView.scene.physicsWorld.contactDelegate = self
+        updateHeader()
     }
     
     func teardown() {
@@ -38,7 +42,7 @@ class BallThrowingStateController: GameStateController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard canThrow else { return }
-        canThrow = false
+//        canThrow = false
         ballCount += 1
         game.throwBall()
         waitForBallToFadeOut()
@@ -46,8 +50,15 @@ class BallThrowingStateController: GameStateController {
     
     private func waitForBallToFadeOut() {
         Timer.scheduledTimer(withTimeInterval: Constants.Game.ballLifeTime, repeats: false) { [weak self] _ in
-            if self?.pinsLeft == 0 {
-//                showFrameResults()
+            guard let this = self else { return }
+            let throwResults = this.game.scoreboard.score(pins: this.pins)
+            switch throwResults {
+            case .nextBall:
+                this.setUpNextBall()
+            case .frameComplete:
+                this.showScoreboard(gameOver: false)
+            case .gameOver:
+                this.showScoreboard(gameOver: true)
             }
         }
     }
@@ -55,6 +66,19 @@ class BallThrowingStateController: GameStateController {
     private func resetPins() {
         let pinSet = PinSet.create(position: game.pinsPlaceholder.position)
         game.sceneView.scene.rootNode.addChildNode(pinSet)
+    }
+    
+    func updateHeader() {
+        currentBallLabel.text = (game.scoreboard.currentFrame.ballIndex + 1).description
+        currentFrameLabel.text = (game.scoreboard.frameIndex + 1).description
+    }
+    
+    private func setUpNextBall() {
+        // todo: implementar
+    }
+    
+    private func showScoreboard(gameOver: Bool) {
+        // todo: implementar
     }
 }
 
@@ -72,7 +96,7 @@ extension BallThrowingStateController: SCNPhysicsContactDelegate {
         pinHead.removeFromParentNode()
         
         // contabiliza o pino derrubado
-        pinsLeft -= 1
+        pins += 1
     }
     
 }

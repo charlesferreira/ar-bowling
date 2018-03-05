@@ -14,7 +14,7 @@ class PlayerSelectionStateController: GameStateController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
-    private var match: Match { return game.match }
+    private var scoreboard: Scoreboard { return game.scoreboard }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class PlayerSelectionStateController: GameStateController {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        match.addPlayer(Player())
+        scoreboard.players.append(Player())
         updateButtons()
         tableView.reloadData()
     }
@@ -40,10 +40,10 @@ class PlayerSelectionStateController: GameStateController {
     }
     
     private func updateButtons() {
-        let numberOfPlayers = match.players.count
+        let numberOfPlayers = scoreboard.players.count
         addButton.isHidden = numberOfPlayers >= Constants.Game.maxPlayers
         
-        let namedPlayers = match.players.filter { !$0.name.isEmpty }.count
+        let namedPlayers = scoreboard.players.filter { !$0.name.isEmpty }.count
         startButton.isEnabled = numberOfPlayers == namedPlayers && namedPlayers > 0
     }
     
@@ -58,7 +58,7 @@ class PlayerSelectionStateController: GameStateController {
 extension PlayerSelectionStateController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return match.players.count
+        return scoreboard.players.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,7 +67,7 @@ extension PlayerSelectionStateController: UITableViewDataSource {
         }
 
         cell.delegate = self
-        cell.player = match.players[indexPath.row]
+        cell.player = scoreboard.players[indexPath.row]
         
         return cell
     }
@@ -76,7 +76,8 @@ extension PlayerSelectionStateController: UITableViewDataSource {
 extension PlayerSelectionStateController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        match.movePlayer(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        let player = scoreboard.players.remove(at: sourceIndexPath.row)
+        scoreboard.players.insert(player, at: destinationIndexPath.row)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
@@ -92,7 +93,7 @@ extension PlayerSelectionStateController: UITableViewDelegate {
 extension PlayerSelectionStateController: PlayerTableViewCellDelegate {
     
     func cell(_ cell: PlayerTableViewCell, didRemovePlayer player: Player) {
-        match.removePlayer(player)
+        scoreboard.players = scoreboard.players.filter { $0 !== player }
         updateButtons()
         tableView.reloadData()
     }

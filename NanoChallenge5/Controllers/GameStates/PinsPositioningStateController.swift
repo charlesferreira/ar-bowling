@@ -20,7 +20,7 @@ class PinsPositioningStateController: GameStateController {
     func teardown() {
         game.createFloorNode()
         game.pinsPlaceholder.isHidden = true
-        game.match.resetScore()
+        game.scoreboard.setUp()
     }
     
     func update(at time: TimeInterval) {
