@@ -22,6 +22,10 @@ class Scoreboard {
         return frames[playerIndex][frameIndex]
     }
     
+    var currentPlayer: Player {
+        return players[playerIndex]
+    }
+    
     func setUp() {
         playerIndex = 0
         frameIndex = 0
@@ -29,12 +33,18 @@ class Scoreboard {
     }
     
     func resetFrames() {
-        let playerFrames = [Frame](repeating: Frame(), count: Constants.Game.numberOfFrames)
-        frames = [[Frame]](repeating: playerFrames, count: players.count)
+        frames = []
+        players.forEach { _ in
+            var playerFrames = [Frame]()
+            for frameNumber in 1...Constants.Game.numberOfFrames {
+                playerFrames.append(Frame(number: frameNumber))
+            }
+            frames.append(playerFrames)
+        }
     }
     
-    func score(pins: Int) -> ThrowResults {
-        currentFrame.score(pins: pins)
+    func roll(pins: Int) -> ThrowResults {
+        currentFrame.roll(pins: pins)
         
         return currentFrame.isComplete ? nextFrame() : nextBall()
     }

@@ -9,4 +9,5 @@
 class Player {
     
     var name: String = Constants.Player.defaultPlayerName
+    var score = 0;
 }

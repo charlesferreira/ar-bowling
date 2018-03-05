@@ -8,29 +8,15 @@
 
 import UIKit
 
-class FrameView: UIView {
+class FrameView: CustomView {
 
-    @IBOutlet var contentView: UIView!
-    
     @IBOutlet weak var firstBallScoreLabel: UILabel!
     @IBOutlet weak var secondBallScoreLabel: UILabel!
     @IBOutlet weak var frameScoreLabel: UILabel!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
+    func update(frame: Frame) {
+        firstBallScoreLabel.text = frame.firstBall?.description
+        secondBallScoreLabel.text = frame.secondBall?.description
+        frameScoreLabel.text = frame.score?.description
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    func commonInit() {
-        Bundle.main.loadNibNamed("FrameView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    }
-    
 }

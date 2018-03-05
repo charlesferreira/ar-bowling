@@ -14,7 +14,7 @@ class HighscoresViewController: BaseViewController {
     
     var defaults: UserDefaults = .standard
     
-    var highscores = [[String: Int]]()
+    var highscores: [[String: Int]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,14 @@ class HighscoresViewController: BaseViewController {
     }
     
     private func loadHighscores() {
-        highscores = defaults.array(forKey: Constants.UserDefaults.keyForHighscores) as! [[String : Int]]
+        highscores = defaults.array(forKey: Constants.UserDefaults.keyForHighscores) as? [[String : Int]]
     }
 }
 
 extension HighscoresViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return highscores.count
+        return highscores?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +37,7 @@ extension HighscoresViewController: UITableViewDataSource {
             fatalError("Célula não encontrada")
         }
         
-        if let highscore = highscores[indexPath.row].first {
+        if let highscore = highscores?[indexPath.row].first {
             cell.highscore = (player: highscore.key, score: highscore.value)
         }
         

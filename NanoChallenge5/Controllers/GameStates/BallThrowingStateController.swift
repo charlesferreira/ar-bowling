@@ -14,6 +14,7 @@ class BallThrowingStateController: GameStateController {
     @IBOutlet weak var currentFrameLabel: UILabel!
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var instructionBox: UIView!
     
     var canThrow = true
     var ballCount = 0
@@ -21,9 +22,9 @@ class BallThrowingStateController: GameStateController {
     
     func setup() {
         resetPins()
-        instructionLabel.text = Constants.Text.instructionsHold
         game.sceneView.scene.physicsWorld.contactDelegate = self
         updateHeader()
+        setUpNextBall()
     }
     
     func teardown() {
@@ -37,21 +38,21 @@ class BallThrowingStateController: GameStateController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard canThrow else { return }
         game.showBallPlaceholder()
-        instructionLabel.text = Constants.Text.instructionsRelease
+        updateInstructions(text: Constants.Text.instructionsRelease)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard canThrow else { return }
-//        canThrow = false
         ballCount += 1
         game.throwBall()
         waitForBallToFadeOut()
+        updateInstructions(text: nil)
     }
     
     private func waitForBallToFadeOut() {
         Timer.scheduledTimer(withTimeInterval: Constants.Game.ballLifeTime, repeats: false) { [weak self] _ in
             guard let this = self else { return }
-            let throwResults = this.game.scoreboard.score(pins: this.pins)
+            let throwResults = this.game.scoreboard.roll(pins: this.pins)
             switch throwResults {
             case .nextBall:
                 this.setUpNextBall()
@@ -70,15 +71,22 @@ class BallThrowingStateController: GameStateController {
     
     func updateHeader() {
         currentBallLabel.text = (game.scoreboard.currentFrame.ballIndex + 1).description
-        currentFrameLabel.text = (game.scoreboard.frameIndex + 1).description
+        currentFrameLabel.text = game.scoreboard.currentFrame.number.description
+        playerNameLabel.text = game.scoreboard.currentPlayer.name
+    }
+    
+    func updateInstructions(text: String?) {
+        instructionLabel.text = text
+        instructionBox.isHidden = text == nil
     }
     
     private func setUpNextBall() {
-        // todo: implementar
+        updateInstructions(text: Constants.Text.instructionsHold)
+        canThrow = true
     }
     
     private func showScoreboard(gameOver: Bool) {
-        // todo: implementar
+        performSegue(withIdentifier: "ShowScoreboard", sender: nil)
     }
 }
 

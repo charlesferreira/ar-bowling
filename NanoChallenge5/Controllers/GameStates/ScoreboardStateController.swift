@@ -12,13 +12,19 @@ class ScoreboardStateController: GameStateController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
     }
     
-    @IBAction func nextButtonTapped(_ sender: Any) {
+    @IBAction func nextTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func resetTapped(_ sender: Any) {
+        
     }
 }
 
@@ -33,6 +39,7 @@ extension ScoreboardStateController: UITableViewDataSource {
             fatalError("Erro ao obter célula: ScoreboardTableViewCell")
         }
         
+        cell.playerIndex = indexPath.row
         
         return cell
     }

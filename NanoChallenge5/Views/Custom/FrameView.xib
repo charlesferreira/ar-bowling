@@ -17,7 +17,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="d7i-ji-bJz"/>
                 <outlet property="firstBallScoreLabel" destination="HiT-LW-Gp0" id="mdQ-pN-zAN"/>
                 <outlet property="frameScoreLabel" destination="DtG-e4-Djo" id="7zo-Wx-OA9"/>
                 <outlet property="secondBallScoreLabel" destination="gB9-96-jy8" id="OQR-ib-5gJ"/>

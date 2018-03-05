@@ -31,7 +31,6 @@
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                         <segue destination="mDo-wb-GQU" kind="presentation" identifier="ShowTitle" id="IVg-ra-7rg"/>
-                        <segue destination="pMX-Vu-EGu" kind="presentation" identifier="ScoreboardDemo" id="jXy-p4-8FW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -518,6 +517,7 @@ pins placement</string>
                     <connections>
                         <outlet property="currentBallLabel" destination="NA2-uj-TWp" id="eP4-9X-f6f"/>
                         <outlet property="currentFrameLabel" destination="Ln6-HT-B2b" id="n1M-EW-7KD"/>
+                        <outlet property="instructionBox" destination="EWN-Ni-nXO" id="Q2P-HW-mg6"/>
                         <outlet property="instructionLabel" destination="a3K-VO-Vda" id="tLI-k0-K3r"/>
                         <outlet property="playerNameLabel" destination="SFl-Fo-1qN" id="IJH-9W-iTH"/>
                         <segue destination="pMX-Vu-EGu" kind="presentation" identifier="ShowScoreboard" id="cne-bk-t7z"/>
@@ -530,7 +530,7 @@ pins placement</string>
         <!--Scoreboard State Controller-->
         <scene sceneID="b7O-8a-DQg">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="pMX-Vu-EGu" customClass="ScoreboardStateController" customModule="NanoChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="overCurrentContext" id="pMX-Vu-EGu" customClass="ScoreboardStateController" customModule="NanoChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubT-DR-GOI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -589,19 +589,19 @@ pins placement</string>
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Op-cr-CXe" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Op-cr-CXe" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="72" y="0.0" width="70.5" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4p-oQ-0CW" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4p-oQ-0CW" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="144.5" y="0.0" width="70" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5J-Al-eDu" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5J-Al-eDu" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="216.5" y="0.0" width="70.5" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmq-Jn-JT0" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmq-Jn-JT0" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="289" y="0.0" width="70" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
@@ -611,23 +611,23 @@ pins placement</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mIP-id-tIp">
                                                             <rect key="frame" x="0.0" y="76" width="359" height="36"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nN-7Q-0H2" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nN-7Q-0H2" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lik-gA-rMu" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lik-gA-rMu" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="72" y="0.0" width="70.5" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-sk-bwB" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-sk-bwB" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="144.5" y="0.0" width="70" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd7-nM-oWc" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="8" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd7-nM-oWc" customClass="FrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="216.5" y="0.0" width="70.5" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-J4-rLh" customClass="LastFrameView" customModule="NanoChallenge5" customModuleProvider="target">
+                                                                <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-J4-rLh" customClass="LastFrameView" customModule="NanoChallenge5" customModuleProvider="target">
                                                                     <rect key="frame" x="289" y="0.0" width="70" height="36"/>
                                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
@@ -647,6 +647,20 @@ pins placement</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lastFrameView" destination="bG5-J4-rLh" id="4ff-Bj-u6h"/>
+                                            <outlet property="playerNameLabel" destination="nQg-5T-Zi8" id="SFc-E0-YYA"/>
+                                            <outlet property="playerScoreLabel" destination="kRP-3y-RmG" id="PLu-li-8kc"/>
+                                            <outletCollection property="frameViews" destination="gv8-ru-Xrs" collectionClass="NSMutableArray" id="cgS-Yg-g9a"/>
+                                            <outletCollection property="frameViews" destination="7Op-cr-CXe" collectionClass="NSMutableArray" id="7Mi-2j-PnA"/>
+                                            <outletCollection property="frameViews" destination="j4p-oQ-0CW" collectionClass="NSMutableArray" id="Asc-Ca-3TV"/>
+                                            <outletCollection property="frameViews" destination="L5J-Al-eDu" collectionClass="NSMutableArray" id="1Qu-kt-XDi"/>
+                                            <outletCollection property="frameViews" destination="mmq-Jn-JT0" collectionClass="NSMutableArray" id="f7n-pi-SB6"/>
+                                            <outletCollection property="frameViews" destination="8nN-7Q-0H2" collectionClass="NSMutableArray" id="mwJ-NV-8cw"/>
+                                            <outletCollection property="frameViews" destination="lik-gA-rMu" collectionClass="NSMutableArray" id="GLP-Gk-Y6C"/>
+                                            <outletCollection property="frameViews" destination="BIk-sk-bwB" collectionClass="NSMutableArray" id="bGs-AP-thW"/>
+                                            <outletCollection property="frameViews" destination="Fd7-nM-oWc" collectionClass="NSMutableArray" id="Eoz-ub-cTg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -661,7 +675,20 @@ pins placement</string>
                                     <color key="titleShadowColor" white="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButtonTapped:" destination="pMX-Vu-EGu" eventType="touchUpInside" id="IAU-lP-8O9"/>
+                                    <action selector="nextTapped:" destination="pMX-Vu-EGu" eventType="touchUpInside" id="Jqv-Ye-QWL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-b4-YVs">
+                                <rect key="frame" x="200" y="595" width="159" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="24"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.71999999999999997" green="0.99647637889999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetTapped:" destination="pMX-Vu-EGu" eventType="touchUpInside" id="9Fg-As-wyI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -679,6 +706,7 @@ pins placement</string>
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="L3h-4Q-5es" id="72C-ZA-lYB"/>
+                        <outlet property="resetButton" destination="1cR-b4-YVs" id="8BK-4I-p5y"/>
                         <outlet property="tableView" destination="8s3-Qq-guH" id="oYN-YV-KcZ"/>
                     </connections>
                 </viewController>
@@ -827,7 +855,4 @@ pins placement</string>
         <image name="play-button-default" width="141" height="139"/>
         <image name="play-button-highlighted" width="141" height="139"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cne-bk-t7z"/>
-    </inferredMetricsTieBreakers>
 </document>
