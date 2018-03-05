@@ -14,17 +14,38 @@ class ScoreboardStateController: GameStateController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    weak var previousState: GameState!
+    var isGameOver: Bool!
+    var defaults: UserDefaults = .standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        nextButton.isHidden = isGameOver
+        if isGameOver {
+            updateHighscores()
+        }
+    }
+    
+    private func updateHighscores() {
+        guard var highscores = defaults.array(forKey: Constants.UserDefaults.keyForHighscores) as? [[String : Int]] else { return }
+        for player in game.scoreboard.players {
+            highscores.append([player.name: player.score])
+        }
+        
+        highscores = highscores.sorted(by: { a, b -> Bool in
+            return a.first!.value > b.first!.value
+        })
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.game.state = self.previousState
+        }
     }
     
     @IBAction func resetTapped(_ sender: Any) {
-        
+        // todo: voltar para o início
     }
 }
 

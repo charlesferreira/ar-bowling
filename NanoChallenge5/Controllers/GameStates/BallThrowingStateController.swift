@@ -16,15 +16,13 @@ class BallThrowingStateController: GameStateController {
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var instructionBox: UIView!
     
-    var canThrow = true
-    var ballCount = 0
+    var didThrow = false
     var pins = 0
     
     func setup() {
         resetPins()
-        game.sceneView.scene.physicsWorld.contactDelegate = self
-        updateHeader()
         setUpNextBall()
+        game.sceneView.scene.physicsWorld.contactDelegate = self
     }
     
     func teardown() {
@@ -36,14 +34,14 @@ class BallThrowingStateController: GameStateController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard canThrow else { return }
+        guard !didThrow else { return }
         game.showBallPlaceholder()
         updateInstructions(text: Constants.Text.instructionsRelease)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard canThrow else { return }
-        ballCount += 1
+        guard !didThrow else { return }
+        didThrow = true
         game.throwBall()
         waitForBallToFadeOut()
         updateInstructions(text: nil)
@@ -65,8 +63,10 @@ class BallThrowingStateController: GameStateController {
     }
     
     private func resetPins() {
-        let pinSet = PinSet.create(position: game.pinsPlaceholder.position)
-        game.sceneView.scene.rootNode.addChildNode(pinSet)
+        game.pinsPlaceholder.childNodes.forEach { $0.removeFromParentNode() }
+    
+        let pinSet = PinSet.create(position: SCNVector3Zero)
+        game.pinsPlaceholder.addChildNode(pinSet)
     }
     
     func updateHeader() {
@@ -81,12 +81,22 @@ class BallThrowingStateController: GameStateController {
     }
     
     private func setUpNextBall() {
+        updateHeader()
         updateInstructions(text: Constants.Text.instructionsHold)
-        canThrow = true
+        didThrow = false
+        pins = 0
     }
     
     private func showScoreboard(gameOver: Bool) {
-        performSegue(withIdentifier: "ShowScoreboard", sender: nil)
+        performSegue(withIdentifier: "ShowScoreboard", sender: gameOver)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? ScoreboardStateController,
+            let isGameOver = sender as? Bool else { return }
+        
+        controller.previousState = self
+        controller.isGameOver = isGameOver
     }
 }
 

@@ -15,6 +15,7 @@ class PinSet: SCNNode {
     static func create(position: SCNVector3) -> PinSet {
         let pinSet = shared.clone()
         pinSet.position = position
+//        pinSet.animateChildNodes()
         return pinSet
     }
     
@@ -45,5 +46,21 @@ class PinSet: SCNNode {
         pinHead.position = SCNVector3(0, 0.5, 0)
         pinHead.opacity = 0
         node.addChildNode(pinHead)
+    }
+    
+    private func animateChildNodes() {
+        guard let pins = childNodes.first?.childNodes else { return }
+        for child in pins {
+            guard let skittle = child.childNode(withName: "Skittle", recursively: false) else { continue }
+            let originalPosition = skittle.position
+            let startingPosition = skittle.position + SCNVector3(0, 0.5, 0)
+            skittle.position = startingPosition
+            skittle.opacity = 0
+            let duration = Constants.FX.pinFadeInDuration * (1.0 + 0.25 * drand48())
+            let fadeIn = SCNAction.fadeIn(duration: duration)
+            let slideIn = SCNAction.move(to: originalPosition, duration: duration)
+            skittle.removeAllActions()
+            skittle.runAction(SCNAction.group([fadeIn, slideIn]))
+        }
     }
 }

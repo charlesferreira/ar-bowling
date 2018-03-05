@@ -40,7 +40,7 @@ import ARKit
     }
     
     func setup(sceneView: ARSCNView) {
-        sceneView.debugOptions = [.showPhysicsShapes]
+//        sceneView.debugOptions = [.showPhysicsShapes]
         self.sceneView = sceneView
         viewCenter = sceneView.center
         camera = Camera()

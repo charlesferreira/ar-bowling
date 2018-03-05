@@ -17,5 +17,11 @@ class GameStateController: BaseViewController, GameState {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         game.state = self
+        print("Will appear: \(type(of: self))")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("Will disappear: \(type(of: self))")
     }
 }

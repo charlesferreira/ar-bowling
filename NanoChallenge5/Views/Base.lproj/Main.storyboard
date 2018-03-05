@@ -30,7 +30,7 @@
                     </arscnView>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
-                        <segue destination="mDo-wb-GQU" kind="presentation" identifier="ShowTitle" id="IVg-ra-7rg"/>
+                        <segue destination="mDo-wb-GQU" kind="show" identifier="ShowTitle" id="IVg-ra-7rg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -40,7 +40,7 @@
         <!--Title View Controller-->
         <scene sceneID="arb-s7-RIq">
             <objects>
-                <viewController storyboardIdentifier="TitleViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mDo-wb-GQU" customClass="TitleViewController" customModule="NanoChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitleViewController" providesPresentationContextTransitionStyle="YES" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mDo-wb-GQU" customClass="TitleViewController" customModule="NanoChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ZF-B2-BOo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,6 +399,10 @@ pins placement</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGF-Vq-yGC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="76"/>
+                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWN-Ni-nXO">
                                 <rect key="frame" x="37.5" y="307" width="300" height="73"/>
                                 <subviews>
@@ -435,18 +439,35 @@ pins placement</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.50425406678082196" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.79885488013698636" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Ln6-HT-B2b" firstAttribute="centerX" secondItem="vxi-KL-4ce" secondAttribute="centerX" id="9QN-ae-505"/>
                                     <constraint firstAttribute="width" secondItem="vxi-KL-4ce" secondAttribute="height" multiplier="1:1" id="O2P-eM-Jmv"/>
                                     <constraint firstItem="Ln6-HT-B2b" firstAttribute="centerY" secondItem="vxi-KL-4ce" secondAttribute="centerY" id="Pny-Rb-ZCE"/>
                                     <constraint firstAttribute="width" constant="60" id="SUU-pU-zkW"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-VS-6Ge">
+                                <rect key="frame" x="68" y="28" width="243" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFl-Fo-1qN">
+                                        <rect key="frame" x="-0.5" y="0.0" width="243" height="60"/>
+                                        <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="32"/>
+                                        <color key="textColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40314640410958902" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="width" secondItem="GFd-VS-6Ge" secondAttribute="width" id="D16-Rf-2HT"/>
+                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="height" secondItem="GFd-VS-6Ge" secondAttribute="height" id="Gom-ss-u42"/>
+                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="centerY" secondItem="GFd-VS-6Ge" secondAttribute="centerY" id="ceQ-qv-cAp"/>
+                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="centerX" secondItem="GFd-VS-6Ge" secondAttribute="centerX" id="jjo-qG-fqe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-LF-Evp">
+                                <rect key="frame" x="311" y="28" width="56" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40314640410958902" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRr-3Y-5Ri">
                                 <rect key="frame" x="319" y="38" width="40" height="40"/>
@@ -458,7 +479,7 @@ pins placement</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84904751712328763" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84902076198630139" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="NA2-uj-TWp" firstAttribute="centerX" secondItem="PRr-3Y-5Ri" secondAttribute="centerX" id="CA1-wr-5C0"/>
                                     <constraint firstAttribute="width" secondItem="PRr-3Y-5Ri" secondAttribute="height" id="YTc-4S-8fY"/>
@@ -471,45 +492,27 @@ pins placement</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-VS-6Ge">
-                                <rect key="frame" x="68" y="28" width="243" height="60"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFl-Fo-1qN">
-                                        <rect key="frame" x="-0.5" y="0.0" width="243" height="60"/>
-                                        <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="32"/>
-                                        <color key="textColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.2011451198630137" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="width" secondItem="GFd-VS-6Ge" secondAttribute="width" id="D16-Rf-2HT"/>
-                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="height" secondItem="GFd-VS-6Ge" secondAttribute="height" id="Gom-ss-u42"/>
-                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="centerY" secondItem="GFd-VS-6Ge" secondAttribute="centerY" id="ceQ-qv-cAp"/>
-                                    <constraint firstItem="SFl-Fo-1qN" firstAttribute="centerX" secondItem="GFd-VS-6Ge" secondAttribute="centerX" id="jjo-qG-fqe"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-LF-Evp">
-                                <rect key="frame" x="311" y="28" width="56" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="0.20253638698630136" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lef-LF-Evp" firstAttribute="height" secondItem="GFd-VS-6Ge" secondAttribute="height" id="0MG-6g-sBm"/>
                             <constraint firstItem="EWN-Ni-nXO" firstAttribute="centerY" secondItem="zOp-3q-sjk" secondAttribute="centerY" id="1OB-WR-Ekr"/>
+                            <constraint firstItem="zOp-3q-sjk" firstAttribute="top" secondItem="pGF-Vq-yGC" secondAttribute="top" id="2zG-RF-JtU"/>
                             <constraint firstItem="Lef-LF-Evp" firstAttribute="centerY" secondItem="GFd-VS-6Ge" secondAttribute="centerY" id="3ge-NB-6ps"/>
                             <constraint firstItem="PRr-3Y-5Ri" firstAttribute="leading" secondItem="GFd-VS-6Ge" secondAttribute="trailing" constant="8" id="5Ai-9H-4EI"/>
                             <constraint firstItem="GFd-VS-6Ge" firstAttribute="centerY" secondItem="vxi-KL-4ce" secondAttribute="centerY" id="A37-70-QkT"/>
                             <constraint firstItem="vxi-KL-4ce" firstAttribute="top" secondItem="zOp-3q-sjk" secondAttribute="top" constant="8" id="DEQ-Ic-e3s"/>
+                            <constraint firstItem="pGF-Vq-yGC" firstAttribute="width" secondItem="DW3-Xl-rM5" secondAttribute="width" id="Hl8-cI-qNR"/>
                             <constraint firstItem="EWN-Ni-nXO" firstAttribute="centerX" secondItem="zOp-3q-sjk" secondAttribute="centerX" id="O0p-YB-ZHU"/>
                             <constraint firstItem="vxi-KL-4ce" firstAttribute="leading" secondItem="zOp-3q-sjk" secondAttribute="leading" constant="8" id="OL7-5U-bhg"/>
                             <constraint firstItem="EWN-Ni-nXO" firstAttribute="width" secondItem="DW3-Xl-rM5" secondAttribute="width" multiplier="0.8" id="Rf7-Ib-W3Y"/>
+                            <constraint firstItem="pGF-Vq-yGC" firstAttribute="bottom" secondItem="SFl-Fo-1qN" secondAttribute="bottom" constant="8" id="YP7-1p-DQT"/>
                             <constraint firstItem="Lef-LF-Evp" firstAttribute="leading" secondItem="GFd-VS-6Ge" secondAttribute="trailing" id="a8H-1S-tiH"/>
                             <constraint firstItem="Lef-LF-Evp" firstAttribute="centerX" secondItem="PRr-3Y-5Ri" secondAttribute="centerX" id="daG-uC-7qR"/>
                             <constraint firstItem="PRr-3Y-5Ri" firstAttribute="centerY" secondItem="GFd-VS-6Ge" secondAttribute="centerY" id="eQ0-oI-aJS"/>
                             <constraint firstItem="GFd-VS-6Ge" firstAttribute="height" secondItem="vxi-KL-4ce" secondAttribute="height" id="nkC-mE-zsE"/>
                             <constraint firstItem="zOp-3q-sjk" firstAttribute="trailing" secondItem="PRr-3Y-5Ri" secondAttribute="trailing" constant="16" id="rbh-he-Iy6"/>
+                            <constraint firstItem="pGF-Vq-yGC" firstAttribute="centerX" secondItem="zOp-3q-sjk" secondAttribute="centerX" id="vbK-2I-UcY"/>
                             <constraint firstItem="GFd-VS-6Ge" firstAttribute="leading" secondItem="vxi-KL-4ce" secondAttribute="trailing" id="x3L-AC-geI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zOp-3q-sjk"/>
@@ -530,7 +533,7 @@ pins placement</string>
         <!--Scoreboard State Controller-->
         <scene sceneID="b7O-8a-DQg">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="overCurrentContext" id="pMX-Vu-EGu" customClass="ScoreboardStateController" customModule="NanoChallenge5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="currentContext" id="pMX-Vu-EGu" customClass="ScoreboardStateController" customModule="NanoChallenge5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubT-DR-GOI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -678,8 +681,8 @@ pins placement</string>
                                     <action selector="nextTapped:" destination="pMX-Vu-EGu" eventType="touchUpInside" id="Jqv-Ye-QWL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-b4-YVs">
-                                <rect key="frame" x="200" y="595" width="159" height="51"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-b4-YVs">
+                                <rect key="frame" x="108" y="596" width="159" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="AlfaSlabOne-Regular" family="Alfa Slab One" pointSize="24"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -688,7 +691,7 @@ pins placement</string>
                                     <color key="titleShadowColor" white="0.0" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="resetTapped:" destination="pMX-Vu-EGu" eventType="touchUpInside" id="9Fg-As-wyI"/>
+                                    <action selector="resetTapped:" destination="pMX-Vu-EGu" eventType="touchUpInside" id="xxD-D4-UhZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -712,7 +715,7 @@ pins placement</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icu-bl-2f2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6134" y="32"/>
+            <point key="canvasLocation" x="5081" y="881"/>
         </scene>
         <!--Highscores View Controller-->
         <scene sceneID="OrT-PN-Glx">

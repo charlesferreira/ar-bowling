@@ -15,6 +15,7 @@ enum RollType {
 struct Roll {
     
     var type: RollType
+    var pins: Int
     weak var frame: Frame!
     
     var description: String {
